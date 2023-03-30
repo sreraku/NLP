@@ -50,7 +50,8 @@
 \begin{document}
 \maketitle
 \begin{abstract}
-With the advent of social media, people have had excess to propage hate anonymously, making it more dangerous as the impact is not contained by a social group or  geographic area. It is very important for social media companies to accurately identify hateful content and remove it as the impact can be farfetched. It is very difficult to create a model to identify hate speech with good accuracy because of the limitations in correctly labeling the training data. The standard practice is for human raters to label the data but that creates a bias as different people might interpret the presence of hateful content differently. Moreover implicit hate content is much harder to capture compared to content where explicit words or phrases have been used.
+With the advent of social media, people have had access to propagate hate anonymously, making it more dangerous than ever as the impact is not contained by a social group or geographic area. It is very important for social media companies to accurately identify hateful content and remove it as the impact can be far fetched. In addition to just flag hateful content with a binary label, it is useful to identify the hate category, which can be further used to study any correlations between social-political events and its impact on specific categories of hateful content in online media. In this paper, we fine-tune three pre-trained large language models for a multi-label classification task to categorize user comments as toxic, severe\_toxic, , obscene, threat, insult, identity\_hate. We further improve the accuracy of our models by augmenting data for the minority classes by generating additional data using reverse translation.
+
 \end{abstract}
 
 \section{Introduction}
@@ -60,14 +61,65 @@ The adoption of Social media brings in different views of many people. One of th
 
 Hate speech can be targeted against individual, community, ideology etc. The social platforms with so many resources at hand are able to take care of it though much more is needed to cut it at the root.
 
-With the advances in AI/ML, many of the social media platforms have done lot of good work in controlling the proliferation of hate speech by making using of them. Neverthless, there is much more to be done to reduce the exposure to a great extent.
+With the advances in AI/ML, many of the social media platforms have done lot of good work in controlling the proliferation of hate speech by making using of them. Nevertheless, there is much more to be done to reduce the exposure to a great extent.
 
-\section{Background}
 Hate speech on social media platform is well known and the platforms are employing different techniques to bring the exposure down. They are successful in many ways but classifying the content to check if it indeed is hate is very complex as it depends on the context as well as whether its used loosely. There is lot of research done or going on classifying the text as well as augmenting such text.
 
-Our team has chosen to use the well known kaggle data set (jigsaw dataset) that was derieved out of reddit data. The baseline is created using this dataset and running Bert model on top of it for training. Once we have the metrics, we will use TOXIGEN dataset to fine tune this dataset by using Bert and T5 models. Once we have a very good accuracy on this, we will be testing it out against Quora or reddit dataset over the last 5 years. We want to see the trends by the 6 categories and study the correlation of any notable up and downtrends with social/political events during that timespan
+The ability in building accurate models to correctly classify hateful content is a challenging task due to the limited availability of labeled data required for training. The training data needs to be labeled by human annotators. In addition to being a tedious task, it also exposes the annotators to the disturbing content in the data they are required to label. The public data sets available today are highly imbalanced and have very limited samples for some of the classification categories including threat, obscene and severe\_toxic compared to the large amount of non-toxic samples. We follow two approaches to deal with the limitations of data availability.
 
-\section{Methods}
+1) We use pre-trained large language models and fine tune them for a classification tasks. Using a pre-trained model gives us the ability to use smaller amount of training data to achieve the same performance that would have required a much larger training data set with a classifier built from ground up.
+
+2) We use data augmentation to further balance our data set across the toxic classification categories. We have three minority categories: threat, severe-toxic and identity\_hate that have very low representation in our training data set. We use the TOXIGEN data set to augment data for the identity\_hate class. To augment data for the other classes, we use reverse translation to generate additional samples from the existing data. 
+
+
+
+\section{Literature Review}
+
+
+\section{Infrastructure}
+
+\subsection{Data}
+We use the jigaw dataset from kaggle competition that was derived out of reddit data. The data set consist of 3 files that includes the labeled training data, test data and the test labels. We combine the test data and labels file by joining them on the unique sample identifiers. The training dataset has 159,000 samples while the test data set has 60,000 samples. Once processed both are training and test data file  consist of the text comments labeled with 6 categories as below.. 
+
+\begin{itemize}
+\item toxic
+\item severe\_toxic
+\item obscene
+\item threat
+\item insult
+\item identity\_hate
+\end{itemize}
+
+\subsection{Training Setup}
+We split the training data into training and validation data sets using 80:20 split. We use a stratified split on the 6 labels to ensure an even representation of all categories across the training and validation data.
+
+\subsection{Experiment Setup}
+
+\subsection{Evaluation Metrics}
+
+
+\section{Learning Algorithms}
+
+\subsection{BERT}
+
+\subsection{T5}
+
+\subsection{ELECTRA}
+
+\section{Data Balancing and Augmentation}
+
+\subsection{Undersampling Majority Classes}
+
+\subsection{Using TOXIGEN data for identity\_hate class}
+
+\subsection{Generating additional data for threat and obscene classes}
+
+\section{Results}
+
+\section{Error Analysis}
+
+\section{Conclusion}
+
 \label{sec:length}
 
 The conference accepts submissions of long papers and short papers.
