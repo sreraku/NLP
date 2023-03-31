@@ -45,7 +45,7 @@
   % \texttt{sreeram@berkeley.edu} 
   }
 
-\date{}
+\date{April 2023}
 
 \begin{document}
 \maketitle
@@ -55,6 +55,7 @@ With the advent of social media, people have had access to propagate hate anonym
 \end{abstract}
 
 \section{Introduction}
+
 In common language, “hate speech” refers to offensive discourse targeting a group or an individual based on inherent characteristics (such as race, religion or gender).
 
 The adoption of Social media brings in different views of many people. One of the primary issues bleeding the social media community is hate speech. Hate speech brings lot of negativity in people that if not curtailed can spiral into bigger issues like what we see around us in many cases. 
@@ -73,13 +74,15 @@ The ability in building accurate models to correctly classify hateful content is
 
 
 
-\section{Literature Review}
+\section{Background}
+The task of toxic content classification has been tackled before using many different approaches. The availability of quality labeled data has been widely accepted as a limitation in the ability to create accurate models for toxic content classification.
+(Rastogi et al.) has explored generteing synthetic data using EDA and back translation to augment the training data an drepotted improved recall and F1 scoresthe imlimitation of avaIt is a widely accepted re has been a lot of previous work done on classification 
 
 
-\section{Infrastructure}
+\section{Data}
 
-\subsection{Data}
-We use the jigaw dataset from kaggle competition that was derived out of reddit data. The data set consist of 3 files that includes the labeled training data, test data and the test labels. We combine the test data and labels file by joining them on the unique sample identifiers. The training dataset has 159,000 samples while the test data set has 60,000 samples. Once processed both are training and test data file  consist of the text comments labeled with 6 categories as below.. 
+\subsection{Source Data Set}
+We use the jigaw dataset from kaggle competition that was derived out of reddit data. The data set consist of 3 files that includes the labeled training data, test data and the test labels. We combine the test data and labels file by joining them on the unique comment identifiers. The training data set has 159,000 samples while the test data set has 60,000 samples. We convert the comments into lowercase and clean the contents by removing punctuation and special characters. Once processed both are training and test data file  consist of the text comments and binary labels for the 6 categories listed below.
 
 \begin{itemize}
 \item toxic
@@ -90,35 +93,77 @@ We use the jigaw dataset from kaggle competition that was derived out of reddit 
 \item identity\_hate
 \end{itemize}
 
-\subsection{Training Setup}
-We split the training data into training and validation data sets using 80:20 split. We use a stratified split on the 6 labels to ensure an even representation of all categories across the training and validation data.
+\subsection{Data Balancing}
+Our source data is highly imbalanced. Out of the 6 labeled classes, 3 are majority classes with and 3 are minority classes.
+\begin{table}
+\centering
+\begin{tabular}{l r}
+\hline
+\textbf{Label} & \textbf{Count}\\
+\hline
+\verb|toxic| & 159000 \\
+\verb|severe_toxic| & 1500 \\
+\verb|obscene| & 500 \\ 
+\verb|threat| & 500 \\ 
+\verb|insult| & 500 \\
+\verb|identity_hate| & 500 \\
+\hline 
+\end{tabular}
+\caption{Distribution of toxicity labels in the source data set.}
+\end{table}
 
-\subsection{Experiment Setup}
+\subsection{Undersampling Majority Classe Data}
+To balance the dataset for the 6 classes being identified, we use a combination of strategies. We undersample two of two majority classes severe\_toxic and obscene to select 2000 random samples each from the original training data set. Since the label toxic is set to True if any of the 
 
-\subsection{Evaluation Metrics}
+\subsection{Augmenting Minority Class Data}
+To bring the available training data for minority classes to be closer in count to the majority classes more balanced To augment the data for minority classes identity\_hate, we chose to augment with the data available from the TOXIGEN dataset[2]
 
 
-\section{Learning Algorithms}
+\section{Methods}
 
-\subsection{BERT}
+\subsection{Baseline Model}
+Our baseline model is BERT base model(cased). We fine-tune the model on the full training data set that has been split into training and validation using 80:20 split and stratified on the 6 label classes. We add a hidden layer with 200 neurons and dropout layer with 0.3 before our final classification layer with 6 outputs to perform a multi label classification. We train the model for 2 epochs using learning rate of .00005 and batch size of 32.
+
+As expected, the model performs really poorly for our 3 minority classes.
+
+\begin{table*}
+\centering
+\begin{tabular}{llll}
+\hline
+\textbf{class} & \textbf{precision} & \textbf{recall} & \textbf{f1-score}\\
+\hline
+\verb|toxic| & 0.62 & 0.40 & 0.49 \\
+\verb|severe_toxic| & \textcolor{red}{0.00} & \textcolor{red}{0.00} & \textcolor{red}{0.00} \\
+\verb|obscene| & 0.66 & 0.32 & 0.43 \\
+\verb|threat| & \textcolor{red}{0.00} & \textcolor{red}{0.00} & \textcolor{red}{0.00} \\
+\verb|insult| & 0.65 & 0.25 & 0.36 \\
+\verb|identity_hate| & \textcolor{red}{0.00} & \textcolor{red}{0.00} & \textcolor{red}{0.00} \\
+\vspace{2\baselineskip}\\
+\verb|micro avg| & 0.64 & 0.31 & 0.42 \\
+\verb|macro avg| & 0.32 & 0.16 & 0.21 \\
+\verb|weighted avf| & 0.58 & 0.31 & 0.40 \\
+\verb|samples avg| & 0.04 & 0.03 & 0.03 \\
+\hline
+\end{tabular}
+\caption{Baseline Model - Classification Report}
+\end{table*}
+
 
 \subsection{T5}
 
 \subsection{ELECTRA}
 
-\section{Data Balancing and Augmentation}
-
-\subsection{Undersampling Majority Classes}
-
-\subsection{Using TOXIGEN data for identity\_hate class}
-
-\subsection{Generating additional data for threat and obscene classes}
-
-\section{Results}
+\section{Results and Discussion}
 
 \section{Error Analysis}
 
 \section{Conclusion}
+
+\section*{References}
+[1] Rastogi, Chetanya, et al. “Can We Achieve More with Less? Exploring Data Augmentation for Toxic Comment Classification.” ArXiv:2007.00875 [Cs], 2 July 2020, arxiv.org/abs/2007.00875. Accessed 31 Mar. 2023.\\
+[2] ToxiGen: A Large-Scale Machine-Generated Dataset for Adversarial and Implicit Hate Speech Detection (https://aclanthology.org/2022.acl-long.234) (Hartvigsen et al., ACL 2022)
+
+
 
 \label{sec:length}
 
