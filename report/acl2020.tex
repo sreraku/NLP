@@ -16,6 +16,7 @@
 \usepackage[hyperref]{acl2020}
 \usepackage{times}
 \usepackage{latexsym}
+\usepackage{graphicx}
 \renewcommand{\UrlFont}{\ttfamily\small}
 
 % This is not strictly necessary, and may be commented out,
@@ -37,12 +38,12 @@
 \title{The Dark Side of Language: Using NLP to Combat Hate Speech}
 
 \author{ 
-  Adam Hayman, 
-  % \texttt{adamhayman@berkeley.edu} \\
+  Adam Hyman, 
+  %\texttt{adamhyman@berkeley.edu} \\
   Shalini Chawla,
-  % \texttt{schawla@berkeley.edu} \\
+  %\texttt{schawla@berkeley.edu} \\
   Sreeram Ravinoothala \\
-  % \texttt{sreeram@berkeley.edu} 
+  %\texttt{sreeram@berkeley.edu} 
   }
 
 \date{April 2023}
@@ -50,7 +51,7 @@
 \begin{document}
 \maketitle
 \begin{abstract}
-With the advent of social media, people have had access to propagate hate anonymously, making it more dangerous than ever as the impact is not contained by a social group or geographic area. It is very important for social media companies to accurately identify hateful content and remove it as the impact can be far fetched. In addition to just flag hateful content with a binary label, it is useful to identify the hate category, which can be further used to study any correlations between social-political events and its impact on specific categories of hateful content in online media. In this paper, we fine-tune three pre-trained large language models for a multi-label classification task to categorize user comments as toxic, severe\_toxic, , obscene, threat, insult, identity\_hate. We further improve the accuracy of our models by augmenting data for the minority classes by generating additional data using reverse translation.
+With the advent of social media, people have had access to propagate hate anonymously, making it more dangerous than ever as the impact is not contained by a social group or geographic area. It is very important for social media companies to accurately identify hateful content and remove it as the impact can be far fetched. In addition to just flag hateful content with a binary label, it is useful to identify the hate category, which can be further used to study any correlations between social-political events and its impact on specific categories of hateful content in online media. In this paper, we fine-tune three pre-trained large language models for a multi-label classification task to categorize user comments as toxic, severe\_toxic, obscene, threat, insult and identity\_hate. To help our models with accurately identifying the minority classes, we explore back translation as an option to augment existing data.
 
 \end{abstract}
 
@@ -58,15 +59,13 @@ With the advent of social media, people have had access to propagate hate anonym
 
 In common language, “hate speech” refers to offensive discourse targeting a group or an individual based on inherent characteristics (such as race, religion or gender).
 
-The adoption of Social media brings in different views of many people. One of the primary issues bleeding the social media community is hate speech. Hate speech brings lot of negativity in people that if not curtailed can spiral into bigger issues like what we see around us in many cases. 
+The adoption of Social media brings in different views of many people. One of the primary issues bleeding the social media community is hate speech. Hate speech brings lot of negativity in people that if not curtailed can spiral into bigger issues like what we see around us in many cases. Hate speech can be targeted against individual, community, ideology etc. The social platforms with so many resources at hand are able to take care of it though much more is needed to cut it at the root.
 
-Hate speech can be targeted against individual, community, ideology etc. The social platforms with so many resources at hand are able to take care of it though much more is needed to cut it at the root.
-
-With the advances in AI/ML, many of the social media platforms have done lot of good work in controlling the proliferation of hate speech by making using of them. Nevertheless, there is much more to be done to reduce the exposure to a great extent.
+With the advances in AI/ML, many of the social media platforms have done a lot of great work in controlling the proliferation of hate speech by making use of classification algorithms but there is much more to be done to reduce the exposure to a great extent.
 
 Hate speech on social media platform is well known and the platforms are employing different techniques to bring the exposure down. They are successful in many ways but classifying the content to check if it indeed is hate is very complex as it depends on the context as well as whether its used loosely. There is lot of research done or going on classifying the text as well as augmenting such text.
 
-The ability in building accurate models to correctly classify hateful content is a challenging task due to the limited availability of labeled data required for training. The training data needs to be labeled by human annotators. In addition to being a tedious task, it also exposes the annotators to the disturbing content in the data they are required to label. The public data sets available today are highly imbalanced and have very limited samples for some of the classification categories including threat, obscene and severe\_toxic compared to the large amount of non-toxic samples. We follow two approaches to deal with the limitations of data availability.
+The ability in building accurate models to correctly classify hateful content is a challenging task due to the limited availability of labeled data required for training. The training data needs to be labeled by human annotators. In addition to being a tedious task, it also exposes the annotators to the disturbing content in the data they are required to label. The public data sets available today are highly imbalanced and have very limited samples for some of the minority categories including threat, obscene and severe\_toxic compared to the large amount of non-toxic samples. We follow two approaches to deal with the limitations of data availability.
 
 1) We use pre-trained large language models and fine tune them for a classification tasks. Using a pre-trained model gives us the ability to use smaller amount of training data to achieve the same performance that would have required a much larger training data set with a classifier built from ground up.
 
@@ -76,7 +75,7 @@ The ability in building accurate models to correctly classify hateful content is
 
 \section{Background}
 The task of toxic content classification has been tackled before using many different approaches. The availability of quality labeled data has been widely accepted as a limitation in the ability to create accurate models for toxic content classification.
-(Rastogi et al.) has explored generteing synthetic data using EDA and back translation to augment the training data an drepotted improved recall and F1 scoresthe imlimitation of avaIt is a widely accepted re has been a lot of previous work done on classification 
+(Rastogi et al.) has explored generating synthetic data using EDA and back translation to augment the training data and reported improved recall and F1 scores. (Hartvigsen et al., ACL 2022) have used GPT-2 to generate synthetic identity_hate data to help improve the claasification accuracy of implicit conent. 
 
 
 \section{Data}
@@ -112,8 +111,14 @@ Our source data is highly imbalanced. Out of the 6 labeled classes, 3 are majori
 \caption{Distribution of toxicity labels in the source data set.}
 \end{table}
 
-\subsection{Undersampling Majority Classe Data}
-To balance the dataset for the 6 classes being identified, we use a combination of strategies. We undersample two of two majority classes severe\_toxic and obscene to select 2000 random samples each from the original training data set. Since the label toxic is set to True if any of the 
+\begin{figure}[h]
+\centering
+\includegraphics[scale=0.4]{label_counts.png}
+\caption{Toxicity Label Count}
+\end{figure}
+
+\subsection{Undersampling Majority Class Data}
+To balance the data set for the 6 classes being identified, we use a combination of strategies. We undersample two of two majority classes severe\_toxic and obscene to select 2000 random samples each from the original training data set. Since the label toxic is set to True if any of the 
 
 \subsection{Augmenting Minority Class Data}
 To bring the available training data for minority classes to be closer in count to the majority classes more balanced To augment the data for minority classes identity\_hate, we chose to augment with the data available from the TOXIGEN dataset[2]
@@ -126,9 +131,9 @@ Our baseline model is BERT base model(cased). We fine-tune the model on the full
 
 As expected, the model performs really poorly for our 3 minority classes.
 
-\begin{table*}
+\begin{table}
 \centering
-\begin{tabular}{llll}
+\begin{tabular}{lrrr}
 \hline
 \textbf{class} & \textbf{prec} & \textbf{recall} & \textbf{f1-score}\\
 \hline
@@ -146,7 +151,7 @@ As expected, the model performs really poorly for our 3 minority classes.
 \hline
 \end{tabular}
 \caption{Baseline Model - Classification Report}
-\end{table*}
+\end{table}
 
 
 \subsection{T5}
@@ -160,8 +165,8 @@ As expected, the model performs really poorly for our 3 minority classes.
 \section{Conclusion}
 
 \section*{References}
-[1] Rastogi, Chetanya, et al. “Can We Achieve More with Less? Exploring Data Augmentation for Toxic Comment Classification.” ArXiv:2007.00875 [Cs], 2 July 2020, arxiv.org/abs/2007.00875. Accessed 31 Mar. 2023.\\
-[2] ToxiGen: A Large-Scale Machine-Generated Dataset for Adversarial and Implicit Hate Speech Detection (https://aclanthology.org/2022.acl-long.234) (Hartvigsen et al., ACL 2022)
+Rastogi, Chetanya, et al. “Can We Achieve More with Less? Exploring Data Augmentation for Toxic Comment Classification.” ArXiv:2007.00875 [Cs], 2 July 2020, arxiv.org/abs/2007.00875. Accessed 31 Mar. 2023.\\\\
+Thomas Hartvigsen, Saadia Gabriel, Hamid Palangi, Maarten Sap, Dipankar Ray, and Ece Kamar. 2022. ToxiGen: A Large-Scale Machine-Generated Dataset for Adversarial and Implicit Hate Speech Detection. In Proceedings of the 60th Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers), pages 3309–3326, Dublin, Ireland. Association for Computational Linguistics.
 
 
 
