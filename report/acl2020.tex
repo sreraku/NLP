@@ -75,7 +75,7 @@ The ability in building accurate models to correctly classify hateful content is
 
 \section{Background}
 The task of toxic content classification has been tackled before using many different approaches. The availability of quality labeled data has been widely accepted as a limitation in the ability to create accurate models for toxic content classification.
-(Rastogi et al.) has explored generating synthetic data using EDA and back translation to augment the training data and reported improved recall and F1 scores. (Hartvigsen et al., ACL 2022) have used GPT-2 to generate synthetic identity_hate data to help improve the claasification accuracy of implicit conent. 
+(Rastogi et al.) has explored generating synthetic data using EDA and back translation to augment the training data and reported improved recall and F1 scores. (Hartvigsen et al., ACL 2022) have used GPT-2 to generate synthetic identity\_hate data to help improve the claasification accuracy of implicit conent. 
 
 
 \section{Data}
@@ -111,10 +111,11 @@ Our source data is highly imbalanced. Out of the 6 labeled classes, 3 are majori
 \caption{Distribution of toxicity labels in the source data set.}
 \end{table}
 
-\begin{figure}[h]
+\begin{figure}[h!]
 \centering
-\includegraphics[scale=0.4]{label_counts.png}
+\includegraphics[width=50mm,scale=0.5]{label_counts.png}
 \caption{Toxicity Label Count}
+\label{Fig1. label count vs toxicity}
 \end{figure}
 
 \subsection{Undersampling Majority Class Data}
@@ -155,6 +156,54 @@ As expected, the model performs really poorly for our 3 minority classes.
 
 
 \subsection{T5}
+Another model we used is T5-small. We used the model on fine tuned baseline training dataset similart to BERT which was stratified. We used huggingface Transformers library to achieve this task. The pretrained T5 model is used to do text-text conversion. As part of the multilabel classification a language modeling head is used on top of the decoder. The model was run 2 epochs with 8 and 16 batch size. Both the runs gave almost similar results. Table 3 provides the f1 scores, precision and recall across all 6 label classes. 
+
+It can be noted that certain classes like insult and identity hate have 0 f1-score whereas the hamming loss seems to be better. The two classes whose f1 scores are 0 depicts that this model is not good for this job. This can be due to the imbalance in the data for those two classes.
+
+\begin{table}
+\centering
+\begin{tabular}{lrrr}
+\hline
+\textbf{class} & \textbf{prec} & \textbf{recall} & \textbf{f1-score}\\
+\hline
+\verb|toxic| & 1.00 & 0.08 & 0.15 \\
+\verb|severe_toxic| & \textcolor{red}{0.10} & \textcolor{red}{0.94} & \textcolor{red}{0.17} \\
+\verb|obscene| & 0.81 & 0.03 & 0.07 \\
+\verb|threat| & \textcolor{red}{0.06} & \textcolor{red}{0.17} & \textcolor{red}{0.09} \\
+\verb|insult| & 0.54 & 0.0 & 0.0 \\
+\verb|identity_hate| & \textcolor{red}{0.00} & \textcolor{red}{0.00} & \textcolor{red}{0.00} \\
+\vspace{2\baselineskip}\\
+\verb|micro avg| & 0.20 & 0.07 & 0.10 \\
+\verb|macro avg| & 0.42 & 0.20 & 0.08 \\
+\verb|weighted avf| & 0.76 & 0.07 & 0.08 \\
+\verb|samples avg| & 0.01 & 0.00 & 0.01 \\
+\hline
+\end{tabular}
+\caption{T5  Model - Classification Report}
+\end{table}
+
+The metrics that are captured as part of training and validation are as below. The validation f1 score shows that the model is producing a very good prediction.
+
+2 epochs, 8 batch \\
+epoch 1:
+\begin{itemize}
+\item Training loss: 0.1471774057341023
+\item Val loss: 0.08538059349774901
+\item Val accuracy: 0.9676944287773391
+\item Val micro f1 score: 0.6594594594594594
+\item \-\-\- Best Model. Val loss: -inf - 0.6594594594594594
+\end{itemize}
+echo 2:
+\begin{itemize}
+\item Training loss: 0.08286546394057061
+\item Val loss: 0.08029992060314782
+\item Val accuracy: 0.9676317603559567
+\item Val micro f1 score: 0.6922290388548057
+\item \-\-\- Best Model. Val loss: 0.6594594594594594 -0.6922290388548057
+\end{itemize}
+
+Hamming loss: 0.04526198962045895
+
 
 \subsection{ELECTRA}
 
