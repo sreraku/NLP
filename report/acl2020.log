@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2023.3.11)  12 MAR 2023 15:58
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2023.3.11)  12 APR 2023 22:03
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -237,6 +237,23 @@ Package: latexsym 1998/08/17 v2.2e Standard LaTeX package (lasy symbols)
 LaTeX Font Info:    Overwriting symbol font `lasy' in version `bold'
 (Font)                  U/lasy/m/n --> U/lasy/b/n on input line 52.
 )
+(/usr/local/texlive/2022/texmf-dist/tex/latex/graphics/graphicx.sty
+Package: graphicx 2021/09/16 v1.2d Enhanced LaTeX Graphics (DPC,SPQR)
+
+(/usr/local/texlive/2022/texmf-dist/tex/latex/graphics/graphics.sty
+Package: graphics 2021/03/04 v1.4d Standard LaTeX Graphics (DPC,SPQR)
+
+(/usr/local/texlive/2022/texmf-dist/tex/latex/graphics/trig.sty
+Package: trig 2021/08/11 v1.11 sin cos tan (DPC)
+)
+(/usr/local/texlive/2022/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
+File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
+)
+Package graphics Info: Driver file: pdftex.def on input line 107.
+)
+\Gin@req@height=\dimen154
+\Gin@req@width=\dimen155
+)
 (/usr/local/texlive/2022/texmf-dist/tex/latex/microtype/microtype.sty
 Package: microtype 2022/03/14 v3.0d Micro-typographical refinements (RS)
 \MT@toks=\toks17
@@ -246,7 +263,7 @@ LaTeX Info: Redefining \noprotrusionifhmode on input line 1027.
 LaTeX Info: Redefining \leftprotrusion on input line 1028.
 LaTeX Info: Redefining \rightprotrusion on input line 1036.
 LaTeX Info: Redefining \textls on input line 1195.
-\MT@outer@kern=\dimen154
+\MT@outer@kern=\dimen156
 LaTeX Info: Redefining \textmicrotypecontext on input line 1781.
 \MT@listname@count=\count279
 
@@ -263,7 +280,7 @@ Package microtype Info: Loading configuration file microtype.cfg.
 File: microtype.cfg 2022/03/14 v3.0d microtype main configuration file (RS)
 ))
 LaTeX Font Info:    Trying to load font information for OT1+ptm on input line 5
-0.
+1.
 
 (/usr/local/texlive/2022/texmf-dist/tex/latex/psnfss/ot1ptm.fd
 File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
@@ -276,25 +293,25 @@ File: l3backend-pdftex.def 2022-02-07 L3 backend support: PDF output (pdfTeX)
 (./acl2020.aux)
 \openout1 = `acl2020.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 50.
-LaTeX Font Info:    ... okay on input line 50.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 50.
-LaTeX Font Info:    ... okay on input line 50.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 50.
-LaTeX Font Info:    ... okay on input line 50.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 50.
-LaTeX Font Info:    ... okay on input line 50.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 50.
-LaTeX Font Info:    ... okay on input line 50.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 50.
-LaTeX Font Info:    ... okay on input line 50.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 50.
-LaTeX Font Info:    ... okay on input line 50.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 50.
-LaTeX Font Info:    ... okay on input line 50.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 50.
-LaTeX Font Info:    ... okay on input line 50.
-Package hyperref Info: Link coloring ON on input line 50.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 51.
+LaTeX Font Info:    ... okay on input line 51.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 51.
+LaTeX Font Info:    ... okay on input line 51.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 51.
+LaTeX Font Info:    ... okay on input line 51.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 51.
+LaTeX Font Info:    ... okay on input line 51.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 51.
+LaTeX Font Info:    ... okay on input line 51.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 51.
+LaTeX Font Info:    ... okay on input line 51.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 51.
+LaTeX Font Info:    ... okay on input line 51.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 51.
+LaTeX Font Info:    ... okay on input line 51.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 51.
+LaTeX Font Info:    ... okay on input line 51.
+Package hyperref Info: Link coloring ON on input line 51.
 
 (/usr/local/texlive/2022/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2021-04-02 v2.47 Cross-referencing by name of section
@@ -308,9 +325,9 @@ Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
 \c@section@level=\count281
 )
-LaTeX Info: Redefining \ref on input line 50.
-LaTeX Info: Redefining \pageref on input line 50.
-LaTeX Info: Redefining \nameref on input line 50.
+LaTeX Info: Redefining \ref on input line 51.
+LaTeX Info: Redefining \pageref on input line 51.
+LaTeX Info: Redefining \nameref on input line 51.
  (./acl2020.out) (./acl2020.out)
 \@outlinefile=\write3
 \openout3 = `acl2020.out'.
@@ -319,31 +336,40 @@ LaTeX Info: Redefining \nameref on input line 50.
 (/usr/local/texlive/2022/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count282
-\scratchdimen=\dimen155
+\scratchdimen=\dimen157
 \scratchbox=\box54
 \nofMPsegments=\count283
 \nofMParguments=\count284
 \everyMPshowfont=\toks18
 \MPscratchCnt=\count285
-\MPscratchDim=\dimen156
+\MPscratchDim=\dimen158
 \MPnumerator=\count286
 \makeMPintoPDFobject=\count287
 \everyMPtoPDFconversion=\toks19
-) ABD: EveryShipout initializing macros
+) (/usr/local/texlive/2022/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
+Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
+Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
+85.
+
+(/usr/local/texlive/2022/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
+e
+))
+ABD: EveryShipout initializing macros
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: End \AtBeginDocument code.
-LaTeX Info: Redefining \microtypecontext on input line 50.
-Package microtype Info: Applying patch `item' on input line 50.
-Package microtype Info: Applying patch `toc' on input line 50.
-Package microtype Info: Applying patch `eqnum' on input line 50.
-Package microtype Info: Applying patch `footnote' on input line 50.
+LaTeX Info: Redefining \microtypecontext on input line 51.
+Package microtype Info: Applying patch `item' on input line 51.
+Package microtype Info: Applying patch `toc' on input line 51.
+Package microtype Info: Applying patch `eqnum' on input line 51.
+Package microtype Info: Applying patch `footnote' on input line 51.
 Package microtype Info: Generating PDF output.
 Package microtype Info: Character protrusion enabled (level 2).
 Package microtype Info: Using default protrusion set `alltext'.
 Package microtype Info: Automatic font expansion enabled (level 2),
 (microtype)             stretch: 20, shrink: 20, step: 1, non-selected.
 Package microtype Info: Using default expansion set `alltext-nott'.
-LaTeX Info: Redefining \showhyphens on input line 50.
+LaTeX Info: Redefining \showhyphens on input line 51.
 Package microtype Info: No adjustment of tracking.
 Package microtype Info: No adjustment of interword spacing.
 Package microtype Info: No adjustment of character kerning.
@@ -356,19 +382,31 @@ File: mt-cmr.cfg 2013/05/19 v2.2 microtype config. file: Computer Modern Roman
 (RS)
 )
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <12> on input line 51.
+(Font)              <12> on input line 52.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <8> on input line 51.
+(Font)              <8> on input line 52.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <6> on input line 51.
-LaTeX Font Info:    Trying to load font information for U+lasy on input line 51
+(Font)              <6> on input line 52.
+LaTeX Font Info:    Trying to load font information for U+lasy on input line 52
 .
 
 (/usr/local/texlive/2022/texmf-dist/tex/latex/base/ulasy.fd
 File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
+) [1{/usr/local/texlive/2022/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
+
+
+
+]
+LaTeX Font Info:    Trying to load font information for TS1+ptm on input line 8
+7.
+
+(/usr/local/texlive/2022/texmf-dist/tex/latex/psnfss/ts1ptm.fd
+File: ts1ptm.fd 2001/06/04 font definitions for TS1/ptm.
 )
-LaTeX Font Info:    Trying to load font information for OT1+pcr on input line 7
-2.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <10.95> on input line 99.
+LaTeX Font Info:    Trying to load font information for OT1+pcr on input line 1
+03.
 
 (/usr/local/texlive/2022/texmf-dist/tex/latex/psnfss/ot1pcr.fd
 File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
@@ -377,160 +415,389 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `pcr' (encoding: OT1).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <9> on input line 72.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <5> on input line 72.
+<label_counts.png, id=12, 604.2575pt x 441.65pt>
+File: label_counts.png Graphic file (type png)
+<use label_counts.png>
+Package pdftex.def Info: label_counts.png  used on input line 116.
+(pdftex.def)             Requested size: 302.128pt x 220.82445pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 72--73
-[][][]$\OT1/pcr/m/n/9 http : / / acl2020 . org / downloads /
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[2 <./label_counts.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 173--174
+[]\OT1/ptm/m/n/10.95 (+20) --- Best Model. Val loss: -inf -
  []
 
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <10.95> on input line 77.
-[1{/usr/local/texlive/2022/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
+! Missing number, treated as zero.
+<to be read again> 
+                   }
+l.192 \begin{table} {p{0.35\linewidth}
+                                       | p{0.6\linewidth} | p{0.6\linewidth}...
+
+? 
+! Illegal unit of measure (pt inserted).
+<to be read again> 
+                   }
+l.192 \begin{table} {p{0.35\linewidth}
+                                       | p{0.6\linewidth} | p{0.6\linewidth}...
+
+? 
+! Missing number, treated as zero.
+<to be read again> 
+                   }
+l.192 ...le} {p{0.35\linewidth} | p{0.6\linewidth}
+                                                   | p{0.6\linewidth} | p{0....
+
+? 
+! Illegal unit of measure (pt inserted).
+<to be read again> 
+                   }
+l.192 ...le} {p{0.35\linewidth} | p{0.6\linewidth}
+                                                   | p{0.6\linewidth} | p{0....
+
+? 
+! Missing number, treated as zero.
+<to be read again> 
+                   }
+l.192 ...th} | p{0.6\linewidth} | p{0.6\linewidth}
+                                                   | p{0.6\linewidth} | p{0....
+
+? 
+! Illegal unit of measure (pt inserted).
+<to be read again> 
+                   }
+l.192 ...th} | p{0.6\linewidth} | p{0.6\linewidth}
+                                                   | p{0.6\linewidth} | p{0....
+
+? 
+! Missing number, treated as zero.
+<to be read again> 
+                   }
+l.192 ...th} | p{0.6\linewidth} | p{0.6\linewidth}
+                                                   | p{0.6\linewidth} | p{0....
+
+? 
+! Illegal unit of measure (pt inserted).
+<to be read again> 
+                   }
+l.192 ...th} | p{0.6\linewidth} | p{0.6\linewidth}
+                                                   | p{0.6\linewidth} | p{0....
+
+? 
+! Missing number, treated as zero.
+<to be read again> 
+                   }
+l.192 ...th} | p{0.6\linewidth} | p{0.6\linewidth}
+                                                   | p{0.6\linewidth} | p{0....
+
+? 
+! Illegal unit of measure (pt inserted).
+<to be read again> 
+                   }
+l.192 ...th} | p{0.6\linewidth} | p{0.6\linewidth}
+                                                   | p{0.6\linewidth} | p{0....
+
+? 
+! Missing number, treated as zero.
+<to be read again> 
+                   }
+l.192 ...th} | p{0.6\linewidth} | p{0.6\linewidth}
+                                                   | p{0.6\linewidth} | p{0....
+
+? 
+! Illegal unit of measure (pt inserted).
+<to be read again> 
+                   }
+l.192 ...th} | p{0.6\linewidth} | p{0.6\linewidth}
+                                                   | p{0.6\linewidth} | p{0....
+
+? 
+! Missing number, treated as zero.
+<to be read again> 
+                   }
+l.192 ...th} | p{0.6\linewidth} | p{0.6\linewidth}
+                                                   | p{0.6\linewidth} | p{0....
+
+? 
+! Illegal unit of measure (pt inserted).
+<to be read again> 
+                   }
+l.192 ...th} | p{0.6\linewidth} | p{0.6\linewidth}
+                                                   | p{0.6\linewidth} | p{0....
+
+? 
+! Missing number, treated as zero.
+<to be read again> 
+                   }
+l.192 ...th} | p{0.6\linewidth} | p{0.6\linewidth}
+                                                   | p{0.6\linewidth} | p{0....
+
+? 
+! Illegal unit of measure (pt inserted).
+<to be read again> 
+                   }
+l.192 ...th} | p{0.6\linewidth} | p{0.6\linewidth}
+                                                   | p{0.6\linewidth} | p{0....
+
+? 
+! Missing number, treated as zero.
+<to be read again> 
+                   }
+l.192 ...th} | p{0.6\linewidth} | p{0.6\linewidth}
+                                                   | p{0.6\linewidth}}
+? 
+! Illegal unit of measure (pt inserted).
+<to be read again> 
+                   }
+l.192 ...th} | p{0.6\linewidth} | p{0.6\linewidth}
+                                                   | p{0.6\linewidth}}
+? 
+! Missing number, treated as zero.
+<to be read again> 
+                   }
+l.192 ...th} | p{0.6\linewidth} | p{0.6\linewidth}
+                                                  }
+? 
+! Illegal unit of measure (pt inserted).
+<to be read again> 
+                   }
+l.192 ...th} | p{0.6\linewidth} | p{0.6\linewidth}
+                                                  }
+? 
+! Extra alignment tab has been changed to \cr.
+<recently read> \endtemplate 
+                             
+l.196 ...acro AUC-ROC} & \textbf{Toxic AUC-ROC}  &
+                                                   \textbf{Super Toxic AUC-R...
+
+? 
+! Extra alignment tab has been changed to \cr.
+<recently read> \endtemplate 
+                             
+l.196 ...reat AUC-ROC} & \textbf{Insult AUC-ROC} &
+                                                   \textbf{ID Hate AUC-ROC} ...
+
+? 
+! Extra alignment tab has been changed to \cr.
+<recently read> \endtemplate 
+                             
+l.198 \verb|Bert Base| & 0.2 & 0.56 & 0.66 &
+                                             0.5 & 0.63 & 0.5 & 0.61 & 0.5 &...
+
+? 
+! Extra alignment tab has been changed to \cr.
+<recently read> \endtemplate 
+                             
+l.198 ...& 0.56 & 0.66 & 0.5 & 0.63 & 0.5 & 0.61 &
+                                                   0.5 & 0.03 \\
+? 
+! Extra alignment tab has been changed to \cr.
+<recently read> \endtemplate 
+                             
+l.199 \verb|Bert Bal| & 0.05 & 0.51 & 0.57 &
+                                             0.5 & 0.5 & 0.49 & 0.5 & 0.5 & ...
+
+? 
+! Extra alignment tab has been changed to \cr.
+<recently read> \endtemplate 
+                             
+l.199 ... & 0.51 & 0.57 & 0.5 & 0.5 & 0.49 & 0.5 &
+                                                   0.5 & 0.03 \\
+? 
+! Extra alignment tab has been changed to \cr.
+<recently read> \endtemplate 
+                             
+l.200 ...Bert 2 layers Base| & 0.5 & 0.74 & 0.88 &
+                                                   0.6 & 0.87 & 0.57 & 0.8 &...
+
+? 
+! Extra alignment tab has been changed to \cr.
+<recently read> \endtemplate 
+                             
+l.200 ...& 0.74 & 0.88 & 0.6 & 0.87 & 0.57 & 0.8 &
+                                                   0.02 \\
+? 
+! Extra alignment tab has been changed to \cr.
+<recently read> \endtemplate 
+                             
+l.201 ...Bert 2 layers Bal| & 0.42 & 0.86 & 0.85 &
+                                                   0.79 & 0.87 & 0.91 & 0.83...
+
+? 
+! Extra alignment tab has been changed to \cr.
+<recently read> \endtemplate 
+                             
+l.201 ...0.86 & 0.85 & 0.79 & 0.87 & 0.91 & 0.83 &
+                                                   0.89 & 0.05 \\
+? 
+! Extra alignment tab has been changed to \cr.
+<recently read> \endtemplate 
+                             
+l.202 ...Bert 4 layers Base| & 0.55 & 0.78 & 0.9 &
+                                                   0.59 & 0.86 & 0.71 & 0.88...
+
+? 
+! Extra alignment tab has been changed to \cr.
+<recently read> \endtemplate 
+                             
+l.202 ... 0.78 & 0.9 & 0.59 & 0.86 & 0.71 & 0.88 &
+                                                   0.72 & 0.03 \\
+? 
+! Extra alignment tab has been changed to \cr.
+<recently read> \endtemplate 
+                             
+l.203 ...|Bert 4 layers Bal| & 0.44 & 0.87 & 0.6 &
+                                                   0.88 & 0.87 & 0.92 & 0.83...
+
+? 
+! Extra alignment tab has been changed to \cr.
+<recently read> \endtemplate 
+                             
+l.203 ... 0.87 & 0.6 & 0.88 & 0.87 & 0.92 & 0.83 &
+                                                   0.88 & 0.05 \\
+? 
+! Extra alignment tab has been changed to \cr.
+<recently read> \endtemplate 
+                             
+l.204 \verb|Bert 6 layers Base| & & & &
+                                        & & & & & \\
+? 
+! Extra alignment tab has been changed to \cr.
+<recently read> \endtemplate 
+                             
+l.204 \verb|Bert 6 layers Base| & & & & & & & &
+                                                & \\
+? 
+! Extra alignment tab has been changed to \cr.
+<recently read> \endtemplate 
+                             
+l.205 ...|Bert 6 layers Bal| & 0.5 & 0.83 & 0.87 &
+                                                   0.73 & 0.83 & 0.88 & 0.79...
+
+? 
+! Extra alignment tab has been changed to \cr.
+<recently read> \endtemplate 
+                             
+l.205 ...0.83 & 0.87 & 0.73 & 0.83 & 0.88 & 0.79 &
+                                                   0.9 & 0.03 \\
+? 
+! Extra alignment tab has been changed to \cr.
+<recently read> \endtemplate 
+                             
+l.206 ...rt All layers Base| & 0.49 & 0.77 & 0.9 &
+                                                   0.73 & 0.89 & 0.49 & 0.88...
+
+? 
+! Extra alignment tab has been changed to \cr.
+<recently read> \endtemplate 
+                             
+l.206 ... 0.77 & 0.9 & 0.73 & 0.89 & 0.49 & 0.88 &
+                                                   0.73 & 0.03 \\
+? 
+! Extra alignment tab has been changed to \cr.
+<recently read> \endtemplate 
+                             
+l.207 ...rt All layers Bal| & 0.51 & 0.89 & 0.89 &
+                                                   0.87 & 0.88 & 0.9 & 0.87 ...
+
+? 
+! Extra alignment tab has been changed to \cr.
+<recently read> \endtemplate 
+                             
+l.207 ... 0.89 & 0.89 & 0.87 & 0.88 & 0.9 & 0.87 &
+                                                   0.91 & 0.04 \\
+? 
+! Extra alignment tab has been changed to \cr.
+<recently read> \endtemplate 
+                             
+l.208 \verb|T5 Base| & 0.07 & 0.59 & 0.53 &
+                                            0.94 & 0.51 & 0.58 & 0.5 & 0.5 &...
+
+? 
+! Extra alignment tab has been changed to \cr.
+<recently read> \endtemplate 
+                             
+l.208 ... 0.59 & 0.53 & 0.94 & 0.51 & 0.58 & 0.5 &
+                                                   0.5 & 0.04 \\
+? 
+! Extra alignment tab has been changed to \cr.
+<recently read> \endtemplate 
+                             
+l.209 \verb|T5  Bal| & 0.12 & 0.61 & 0.77 &
+                                            0.92 & 0.52 & 0.49 & 0.5 & 0.5 &...
+
+? 
+! Extra alignment tab has been changed to \cr.
+<recently read> \endtemplate 
+                             
+l.209 ... 0.61 & 0.77 & 0.92 & 0.52 & 0.49 & 0.5 &
+                                                   0.5 & 0.05 \\
+? 
+! Extra alignment tab has been changed to \cr.
+<recently read> \endtemplate 
+                             
+l.210 \verb|XLNet Base| & & & &
+                                & & & & & \\
+? 
+! Extra alignment tab has been changed to \cr.
+<recently read> \endtemplate 
+                             
+l.210 \verb|XLNet Base| & & & & & & & &
+                                        & \\
+? 
+! Extra alignment tab has been changed to \cr.
+<recently read> \endtemplate 
+                             
+l.211 \verb|XLNet  Bal| & 0.42 & 0.89 & 0.89 &
+                                               0.83 & 0.89 & 0.95 & 0.88 & 0...
+
+? 
+! Extra alignment tab has been changed to \cr.
+<recently read> \endtemplate 
+                             
+l.211 ...0.89 & 0.89 & 0.83 & 0.89 & 0.95 & 0.88 &
+                                                   0.92 & \\
+? 
+
+Overfull \hbox (219.94666pt too wide) in paragraph at lines 192--215
+ [] 
+ []
 
 
+Underfull \hbox (badness 10000) in paragraph at lines 223--225
 
-]
-
-Package natbib Warning: Citation `Gusfield:97' on page 2 undefined on input lin
-e 109.
+ []
 
 
-Package natbib Warning: Citation `Gusfield:97' on page 2 undefined on input lin
-e 113.
+Underfull \hbox (badness 3514) in paragraph at lines 223--225
+\OT1/ptm/m/n/10.95 (+20) Thomas Hartvigsen, Saa-dia Gabriel, Hamid
+ []
 
-[2]
-LaTeX Font Info:    Trying to load font information for TS1+ptm on input line 1
-79.
- (/usr/local/texlive/2022/texmf-dist/tex/latex/psnfss/ts1ptm.fd
-File: ts1ptm.fd 2001/06/04 font definitions for TS1/ptm.
-) [3]
-
-Package natbib Warning: Citation `Gusfield:97' on page 4 undefined on input lin
-e 341.
-
-
-Package natbib Warning: Citation `Gusfield:97' on page 4 undefined on input lin
-e 341.
-
-
-Package natbib Warning: Citation `Aho:72' on page 4 undefined on input line 343
-.
-
-
-Package natbib Warning: Citation `Chandra:81' on page 4 undefined on input line
- 343.
-
-
-Package natbib Warning: Citation `Gusfield:97' on page 4 undefined on input lin
-e 343.
-
-
-Package natbib Warning: Citation `Aho:72' on page 4 undefined on input line 343
-.
-
-[4]
-
-Package natbib Warning: Citation `Gusfield:97' on page 5 undefined on input lin
-e 348.
-
-
-Package natbib Warning: Citation `Gusfield:97' on page 5 undefined on input lin
-e 352.
-
-
-Package natbib Warning: Citation `Gusfield:97' on page 5 undefined on input lin
-e 361.
-
-
-Package natbib Warning: Citation `Gusfield:97' on page 5 undefined on input lin
-e 362.
-
-
-Package natbib Warning: Citation `Gusfield:97' on page 5 undefined on input lin
-e 363.
-
-
-Package natbib Warning: Citation `Gusfield:97' on page 5 undefined on input lin
-e 364.
-
-
-Package natbib Warning: Citation `Gusfield:97' on page 5 undefined on input lin
-e 377.
-
-
-Package natbib Warning: Citation `Gusfield:97' on page 5 undefined on input lin
-e 378.
-
-
-Package natbib Warning: Citation `Gusfield:97' on page 5 undefined on input lin
-e 379.
-
-
-Package natbib Warning: Citation `APA:83' on page 5 undefined on input line 387
-.
-
-
-Package natbib Warning: Citation `Ando2005' on page 5 undefined on input line 3
-97.
-
-
-Package natbib Warning: Citation `borschinger-johnson-2011-particle' on page 5 
-undefined on input line 398.
-
-
-Package natbib Warning: Citation `andrew2007scalable' on page 5 undefined on in
-put line 399.
-
-
-Package natbib Warning: Citation `rasooli-tetrault-2015' on page 5 undefined on
- input line 400.
-
-
-Package natbib Warning: Citation `goodman-etal-2016-noise' on page 5 undefined 
-on input line 425.
-
-
-Package natbib Warning: Citation `harper-2014-learning' on page 5 undefined on 
-input line 426.
-
-[5]
-No file acl2020.bbl.
-[6]
-
-Package natbib Warning: There were undefined citations.
-
-[7
+[3] [4
 
 ] (./acl2020.aux)
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
 Package rerunfilecheck Info: File `acl2020.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  )
 (\end occurred when \ifx on line 17 was incomplete) 
 Here is how much of TeX's memory you used:
- 12609 strings out of 478268
- 201617 string characters out of 5846347
- 535645 words of memory out of 5000000
- 30318 multiletter control sequences out of 15000+600000
- 507688 words of font info for 272 fonts, out of 8000000 for 9000
+ 12699 strings out of 478268
+ 205345 string characters out of 5846347
+ 541561 words of memory out of 5000000
+ 30601 multiletter control sequences out of 15000+600000
+ 488813 words of font info for 146 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 75i,12n,77p,1004b,425s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 75i,10n,77p,1004b,383s stack positions out of 10000i,1000n,20000p,200000b,200000s
 {/usr/local/texlive/2022/tex
 mf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/texlive/2022/texmf-dist/fonts/t
-ype1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2022/texmf-dist/fonts/ty
-pe1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type
-1/urw/courier/ucrr8a.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/urw/ti
-mes/utmb8a.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/urw/times/utmr8a
-.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on acl2020.pdf (7 pages, 112896 bytes).
+ype1/urw/courier/ucrr8a.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/urw
+/times/utmb8a.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/urw/times/utm
+r8a.pfb>
+Output written on acl2020.pdf (4 pages, 117034 bytes).
 PDF statistics:
- 145 PDF objects out of 1000 (max. 8388607)
- 122 compressed objects within 2 object streams
- 53 named destinations out of 1000 (max. 500000)
- 57345 words of extra memory for PDF output out of 61914 (max. 10000000)
+ 68 PDF objects out of 1000 (max. 8388607)
+ 53 compressed objects within 1 object stream
+ 24 named destinations out of 1000 (max. 500000)
+ 29190 words of extra memory for PDF output out of 29859 (max. 10000000)
 
