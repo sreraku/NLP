@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2023.3.11)  12 APR 2023 22:03
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2023.3.11)  13 APR 2023 12:00
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -392,7 +392,18 @@ LaTeX Font Info:    Trying to load font information for U+lasy on input line 52
 
 (/usr/local/texlive/2022/texmf-dist/tex/latex/base/ulasy.fd
 File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
-) [1{/usr/local/texlive/2022/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
+)
+LaTeX Font Info:    Trying to load font information for OT1+pcr on input line 5
+2.
+
+(/usr/local/texlive/2022/texmf-dist/tex/latex/psnfss/ot1pcr.fd
+File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
+)
+Package microtype Info: Loading generic protrusion settings for font family
+(microtype)             `pcr' (encoding: OT1).
+(microtype)             For optimal results, create family-specific settings.
+(microtype)             See the microtype manual for details.
+ [1{/usr/local/texlive/2022/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
 
 
 
@@ -405,399 +416,83 @@ File: ts1ptm.fd 2001/06/04 font definitions for TS1/ptm.
 )
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <10.95> on input line 99.
-LaTeX Font Info:    Trying to load font information for OT1+pcr on input line 1
-03.
-
-(/usr/local/texlive/2022/texmf-dist/tex/latex/psnfss/ot1pcr.fd
-File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
-)
-Package microtype Info: Loading generic protrusion settings for font family
-(microtype)             `pcr' (encoding: OT1).
-(microtype)             For optimal results, create family-specific settings.
-(microtype)             See the microtype manual for details.
-<label_counts.png, id=12, 604.2575pt x 441.65pt>
+<label_counts.png, id=13, 604.2575pt x 441.65pt>
 File: label_counts.png Graphic file (type png)
 <use label_counts.png>
 Package pdftex.def Info: label_counts.png  used on input line 116.
 (pdftex.def)             Requested size: 302.128pt x 220.82445pt.
+ [2 <./label_counts.png>]
+Underfull \vbox (badness 2221) has occurred while \output is active []
 
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-[2 <./label_counts.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 173--174
-[]\OT1/ptm/m/n/10.95 (+20) --- Best Model. Val loss: -inf -
- []
-
-! Missing number, treated as zero.
-<to be read again> 
-                   }
-l.192 \begin{table} {p{0.35\linewidth}
-                                       | p{0.6\linewidth} | p{0.6\linewidth}...
-
-? 
-! Illegal unit of measure (pt inserted).
-<to be read again> 
-                   }
-l.192 \begin{table} {p{0.35\linewidth}
-                                       | p{0.6\linewidth} | p{0.6\linewidth}...
-
-? 
-! Missing number, treated as zero.
-<to be read again> 
-                   }
-l.192 ...le} {p{0.35\linewidth} | p{0.6\linewidth}
-                                                   | p{0.6\linewidth} | p{0....
-
-? 
-! Illegal unit of measure (pt inserted).
-<to be read again> 
-                   }
-l.192 ...le} {p{0.35\linewidth} | p{0.6\linewidth}
-                                                   | p{0.6\linewidth} | p{0....
-
-? 
-! Missing number, treated as zero.
-<to be read again> 
-                   }
-l.192 ...th} | p{0.6\linewidth} | p{0.6\linewidth}
-                                                   | p{0.6\linewidth} | p{0....
-
-? 
-! Illegal unit of measure (pt inserted).
-<to be read again> 
-                   }
-l.192 ...th} | p{0.6\linewidth} | p{0.6\linewidth}
-                                                   | p{0.6\linewidth} | p{0....
-
-? 
-! Missing number, treated as zero.
-<to be read again> 
-                   }
-l.192 ...th} | p{0.6\linewidth} | p{0.6\linewidth}
-                                                   | p{0.6\linewidth} | p{0....
-
-? 
-! Illegal unit of measure (pt inserted).
-<to be read again> 
-                   }
-l.192 ...th} | p{0.6\linewidth} | p{0.6\linewidth}
-                                                   | p{0.6\linewidth} | p{0....
-
-? 
-! Missing number, treated as zero.
-<to be read again> 
-                   }
-l.192 ...th} | p{0.6\linewidth} | p{0.6\linewidth}
-                                                   | p{0.6\linewidth} | p{0....
-
-? 
-! Illegal unit of measure (pt inserted).
-<to be read again> 
-                   }
-l.192 ...th} | p{0.6\linewidth} | p{0.6\linewidth}
-                                                   | p{0.6\linewidth} | p{0....
-
-? 
-! Missing number, treated as zero.
-<to be read again> 
-                   }
-l.192 ...th} | p{0.6\linewidth} | p{0.6\linewidth}
-                                                   | p{0.6\linewidth} | p{0....
-
-? 
-! Illegal unit of measure (pt inserted).
-<to be read again> 
-                   }
-l.192 ...th} | p{0.6\linewidth} | p{0.6\linewidth}
-                                                   | p{0.6\linewidth} | p{0....
-
-? 
-! Missing number, treated as zero.
-<to be read again> 
-                   }
-l.192 ...th} | p{0.6\linewidth} | p{0.6\linewidth}
-                                                   | p{0.6\linewidth} | p{0....
-
-? 
-! Illegal unit of measure (pt inserted).
-<to be read again> 
-                   }
-l.192 ...th} | p{0.6\linewidth} | p{0.6\linewidth}
-                                                   | p{0.6\linewidth} | p{0....
-
-? 
-! Missing number, treated as zero.
-<to be read again> 
-                   }
-l.192 ...th} | p{0.6\linewidth} | p{0.6\linewidth}
-                                                   | p{0.6\linewidth} | p{0....
-
-? 
-! Illegal unit of measure (pt inserted).
-<to be read again> 
-                   }
-l.192 ...th} | p{0.6\linewidth} | p{0.6\linewidth}
-                                                   | p{0.6\linewidth} | p{0....
-
-? 
-! Missing number, treated as zero.
-<to be read again> 
-                   }
-l.192 ...th} | p{0.6\linewidth} | p{0.6\linewidth}
-                                                   | p{0.6\linewidth}}
-? 
-! Illegal unit of measure (pt inserted).
-<to be read again> 
-                   }
-l.192 ...th} | p{0.6\linewidth} | p{0.6\linewidth}
-                                                   | p{0.6\linewidth}}
-? 
-! Missing number, treated as zero.
-<to be read again> 
-                   }
-l.192 ...th} | p{0.6\linewidth} | p{0.6\linewidth}
-                                                  }
-? 
-! Illegal unit of measure (pt inserted).
-<to be read again> 
-                   }
-l.192 ...th} | p{0.6\linewidth} | p{0.6\linewidth}
-                                                  }
-? 
-! Extra alignment tab has been changed to \cr.
-<recently read> \endtemplate 
-                             
-l.196 ...acro AUC-ROC} & \textbf{Toxic AUC-ROC}  &
-                                                   \textbf{Super Toxic AUC-R...
-
-? 
-! Extra alignment tab has been changed to \cr.
-<recently read> \endtemplate 
-                             
-l.196 ...reat AUC-ROC} & \textbf{Insult AUC-ROC} &
-                                                   \textbf{ID Hate AUC-ROC} ...
-
-? 
-! Extra alignment tab has been changed to \cr.
-<recently read> \endtemplate 
-                             
-l.198 \verb|Bert Base| & 0.2 & 0.56 & 0.66 &
-                                             0.5 & 0.63 & 0.5 & 0.61 & 0.5 &...
-
-? 
-! Extra alignment tab has been changed to \cr.
-<recently read> \endtemplate 
-                             
-l.198 ...& 0.56 & 0.66 & 0.5 & 0.63 & 0.5 & 0.61 &
-                                                   0.5 & 0.03 \\
-? 
-! Extra alignment tab has been changed to \cr.
-<recently read> \endtemplate 
-                             
-l.199 \verb|Bert Bal| & 0.05 & 0.51 & 0.57 &
-                                             0.5 & 0.5 & 0.49 & 0.5 & 0.5 & ...
-
-? 
-! Extra alignment tab has been changed to \cr.
-<recently read> \endtemplate 
-                             
-l.199 ... & 0.51 & 0.57 & 0.5 & 0.5 & 0.49 & 0.5 &
-                                                   0.5 & 0.03 \\
-? 
-! Extra alignment tab has been changed to \cr.
-<recently read> \endtemplate 
-                             
-l.200 ...Bert 2 layers Base| & 0.5 & 0.74 & 0.88 &
-                                                   0.6 & 0.87 & 0.57 & 0.8 &...
-
-? 
-! Extra alignment tab has been changed to \cr.
-<recently read> \endtemplate 
-                             
-l.200 ...& 0.74 & 0.88 & 0.6 & 0.87 & 0.57 & 0.8 &
-                                                   0.02 \\
-? 
-! Extra alignment tab has been changed to \cr.
-<recently read> \endtemplate 
-                             
-l.201 ...Bert 2 layers Bal| & 0.42 & 0.86 & 0.85 &
-                                                   0.79 & 0.87 & 0.91 & 0.83...
-
-? 
-! Extra alignment tab has been changed to \cr.
-<recently read> \endtemplate 
-                             
-l.201 ...0.86 & 0.85 & 0.79 & 0.87 & 0.91 & 0.83 &
-                                                   0.89 & 0.05 \\
-? 
-! Extra alignment tab has been changed to \cr.
-<recently read> \endtemplate 
-                             
-l.202 ...Bert 4 layers Base| & 0.55 & 0.78 & 0.9 &
-                                                   0.59 & 0.86 & 0.71 & 0.88...
-
-? 
-! Extra alignment tab has been changed to \cr.
-<recently read> \endtemplate 
-                             
-l.202 ... 0.78 & 0.9 & 0.59 & 0.86 & 0.71 & 0.88 &
-                                                   0.72 & 0.03 \\
-? 
-! Extra alignment tab has been changed to \cr.
-<recently read> \endtemplate 
-                             
-l.203 ...|Bert 4 layers Bal| & 0.44 & 0.87 & 0.6 &
-                                                   0.88 & 0.87 & 0.92 & 0.83...
-
-? 
-! Extra alignment tab has been changed to \cr.
-<recently read> \endtemplate 
-                             
-l.203 ... 0.87 & 0.6 & 0.88 & 0.87 & 0.92 & 0.83 &
-                                                   0.88 & 0.05 \\
-? 
-! Extra alignment tab has been changed to \cr.
-<recently read> \endtemplate 
-                             
-l.204 \verb|Bert 6 layers Base| & & & &
-                                        & & & & & \\
-? 
-! Extra alignment tab has been changed to \cr.
-<recently read> \endtemplate 
-                             
-l.204 \verb|Bert 6 layers Base| & & & & & & & &
-                                                & \\
-? 
-! Extra alignment tab has been changed to \cr.
-<recently read> \endtemplate 
-                             
-l.205 ...|Bert 6 layers Bal| & 0.5 & 0.83 & 0.87 &
-                                                   0.73 & 0.83 & 0.88 & 0.79...
-
-? 
-! Extra alignment tab has been changed to \cr.
-<recently read> \endtemplate 
-                             
-l.205 ...0.83 & 0.87 & 0.73 & 0.83 & 0.88 & 0.79 &
-                                                   0.9 & 0.03 \\
-? 
-! Extra alignment tab has been changed to \cr.
-<recently read> \endtemplate 
-                             
-l.206 ...rt All layers Base| & 0.49 & 0.77 & 0.9 &
-                                                   0.73 & 0.89 & 0.49 & 0.88...
-
-? 
-! Extra alignment tab has been changed to \cr.
-<recently read> \endtemplate 
-                             
-l.206 ... 0.77 & 0.9 & 0.73 & 0.89 & 0.49 & 0.88 &
-                                                   0.73 & 0.03 \\
-? 
-! Extra alignment tab has been changed to \cr.
-<recently read> \endtemplate 
-                             
-l.207 ...rt All layers Bal| & 0.51 & 0.89 & 0.89 &
-                                                   0.87 & 0.88 & 0.9 & 0.87 ...
-
-? 
-! Extra alignment tab has been changed to \cr.
-<recently read> \endtemplate 
-                             
-l.207 ... 0.89 & 0.89 & 0.87 & 0.88 & 0.9 & 0.87 &
-                                                   0.91 & 0.04 \\
-? 
-! Extra alignment tab has been changed to \cr.
-<recently read> \endtemplate 
-                             
-l.208 \verb|T5 Base| & 0.07 & 0.59 & 0.53 &
-                                            0.94 & 0.51 & 0.58 & 0.5 & 0.5 &...
-
-? 
-! Extra alignment tab has been changed to \cr.
-<recently read> \endtemplate 
-                             
-l.208 ... 0.59 & 0.53 & 0.94 & 0.51 & 0.58 & 0.5 &
-                                                   0.5 & 0.04 \\
-? 
-! Extra alignment tab has been changed to \cr.
-<recently read> \endtemplate 
-                             
-l.209 \verb|T5  Bal| & 0.12 & 0.61 & 0.77 &
-                                            0.92 & 0.52 & 0.49 & 0.5 & 0.5 &...
-
-? 
-! Extra alignment tab has been changed to \cr.
-<recently read> \endtemplate 
-                             
-l.209 ... 0.61 & 0.77 & 0.92 & 0.52 & 0.49 & 0.5 &
-                                                   0.5 & 0.05 \\
-? 
-! Extra alignment tab has been changed to \cr.
-<recently read> \endtemplate 
-                             
-l.210 \verb|XLNet Base| & & & &
-                                & & & & & \\
-? 
-! Extra alignment tab has been changed to \cr.
-<recently read> \endtemplate 
-                             
-l.210 \verb|XLNet Base| & & & & & & & &
-                                        & \\
-? 
-! Extra alignment tab has been changed to \cr.
-<recently read> \endtemplate 
-                             
-l.211 \verb|XLNet  Bal| & 0.42 & 0.89 & 0.89 &
-                                               0.83 & 0.89 & 0.95 & 0.88 & 0...
-
-? 
-! Extra alignment tab has been changed to \cr.
-<recently read> \endtemplate 
-                             
-l.211 ...0.89 & 0.89 & 0.83 & 0.89 & 0.95 & 0.88 &
-                                                   0.92 & \\
-? 
-
-Overfull \hbox (219.94666pt too wide) in paragraph at lines 192--215
- [] 
+ [3]
+Overfull \hbox (55.657pt too wide) in paragraph at lines 189--204
+ [][] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 223--225
+Overfull \hbox (55.657pt too wide) in paragraph at lines 210--225
+ [][] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 234--238
 
  []
 
 
-Underfull \hbox (badness 3514) in paragraph at lines 223--225
+Underfull \hbox (badness 3514) in paragraph at lines 234--238
 \OT1/ptm/m/n/10.95 (+20) Thomas Hartvigsen, Saa-dia Gabriel, Hamid
  []
 
-[3] [4
 
-] (./acl2020.aux)
+Underfull \hbox (badness 10000) in paragraph at lines 234--238
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 234--238
+\OT1/ptm/m/n/10.95 (+20) Toxic, Hate-ful, Of-fen-sive or Abu-sive?
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 234--238
+\OT1/ptm/m/n/10.95 (+20) What Are We Re-ally Clas-si-fy-ing ...
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 234--238
+
+ []
+
+
+Underfull \hbox (badness 6641) in paragraph at lines 234--238
+\OT1/ptm/m/n/10.95 (+20) Much Does Pre-Trained In-for-ma-tion Help?
+ []
+
+[4
+
+] [5] (./acl2020.aux)
 Package rerunfilecheck Info: File `acl2020.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  )
 (\end occurred when \ifx on line 17 was incomplete) 
 Here is how much of TeX's memory you used:
- 12699 strings out of 478268
- 205345 string characters out of 5846347
- 541561 words of memory out of 5000000
- 30601 multiletter control sequences out of 15000+600000
- 488813 words of font info for 146 fonts, out of 8000000 for 9000
+ 12748 strings out of 478268
+ 205824 string characters out of 5846347
+ 538768 words of memory out of 5000000
+ 30602 multiletter control sequences out of 15000+600000
+ 490994 words of font info for 176 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 75i,10n,77p,1004b,383s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 75i,11n,77p,1137b,364s stack positions out of 10000i,1000n,20000p,200000b,200000s
 {/usr/local/texlive/2022/tex
 mf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/texlive/2022/texmf-dist/fonts/t
-ype1/urw/courier/ucrr8a.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/urw
-/times/utmb8a.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/urw/times/utm
-r8a.pfb>
-Output written on acl2020.pdf (4 pages, 117034 bytes).
+ype1/urw/courier/ucrb8a.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/urw
+/courier/ucrr8a.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/urw/times/u
+tmb8a.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/urw/times/utmr8a.pfb>
+Output written on acl2020.pdf (5 pages, 130741 bytes).
 PDF statistics:
- 68 PDF objects out of 1000 (max. 8388607)
- 53 compressed objects within 1 object stream
- 24 named destinations out of 1000 (max. 500000)
- 29190 words of extra memory for PDF output out of 29859 (max. 10000000)
+ 82 PDF objects out of 1000 (max. 8388607)
+ 64 compressed objects within 1 object stream
+ 28 named destinations out of 1000 (max. 500000)
+ 29702 words of extra memory for PDF output out of 29859 (max. 10000000)
 
