@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2023.3.11)  13 APR 2023 22:19
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2023.3.11)  13 APR 2023 22:53
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -434,41 +434,6 @@ Overfull \hbox (24.49452pt too wide) in paragraph at lines 211--226
  [][] 
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 235--239
-
- []
-
-
-Underfull \hbox (badness 3514) in paragraph at lines 235--239
-\OT1/ptm/m/n/10.95 (+20) Thomas Hartvigsen, Saa-dia Gabriel, Hamid
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 235--239
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 235--239
-\OT1/ptm/m/n/10.95 (+20) Toxic, Hate-ful, Of-fen-sive or Abu-sive?
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 235--239
-\OT1/ptm/m/n/10.95 (+20) What Are We Re-ally Clas-si-fy-ing ...
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 235--239
-
- []
-
-
-Underfull \hbox (badness 6641) in paragraph at lines 235--239
-\OT1/ptm/m/n/10.95 (+20) Much Does Pre-Trained In-for-ma-tion Help?
- []
-
 (./acl2020.bbl
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <9> on input line 14.
@@ -496,16 +461,18 @@ Underfull \hbox (badness 10000) in paragraph at lines 11--16
 10 (+20) .
  []
 
-) [4] [5] (./acl2020.aux)
+) [4
+
+] [5] (./acl2020.aux)
 Package rerunfilecheck Info: File `acl2020.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  )
 (\end occurred when \ifx on line 17 was incomplete) 
 Here is how much of TeX's memory you used:
- 12824 strings out of 478268
- 206959 string characters out of 5846347
- 538896 words of memory out of 5000000
- 30641 multiletter control sequences out of 15000+600000
+ 12827 strings out of 478268
+ 207034 string characters out of 5846347
+ 538920 words of memory out of 5000000
+ 30644 multiletter control sequences out of 15000+600000
  495609 words of font info for 199 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  75i,11n,77p,1133b,407s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -515,10 +482,10 @@ ype1/urw/courier/ucrb8a.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/urw
 /courier/ucrr8a.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/urw/times/u
 tmb8a.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/urw/times/utmr8a.pfb>
 </usr/local/texlive/2022/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on acl2020.pdf (5 pages, 145317 bytes).
+Output written on acl2020.pdf (5 pages, 144365 bytes).
 PDF statistics:
- 106 PDF objects out of 1000 (max. 8388607)
- 86 compressed objects within 1 object stream
+ 108 PDF objects out of 1000 (max. 8388607)
+ 88 compressed objects within 1 object stream
  33 named destinations out of 1000 (max. 500000)
  35846 words of extra memory for PDF output out of 42996 (max. 10000000)
 
