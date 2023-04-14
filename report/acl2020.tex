@@ -39,11 +39,10 @@
 \title{The Dark Side of Language: Using NLP to Combat Hate Speech}
 
 \author{ 
-  Adam Hyman, 
-  \texttt{adamhyman@berkeley.edu}
-  \\[3ex]
-  \textbf{Shalini Chawla, shalini\_chawla@berkeley.edu}
-  \\[3ex]
+  Shalini Chawla, shalini\_chawla@berkeley.edu
+  \\[2ex]
+  \textbf{Adam Hyman, adamhyman@berkeley.edu}
+  \\[2ex]
   \textbf{Sreeram Ravinoothala, sreeram@berkeley.edu} 
   }
 
@@ -58,9 +57,7 @@ With the advent of social media, people have had access to propagate hate anonym
 
 \section{Introduction}
 
-In common language, “hate speech” refers to offensive discourse targeting a group or an individual based on inherent characteristics (such as race, religion or gender).
-
-The adoption of social media brings in different views of many people. One of the primary issues bleeding the social media community is hate speech. Hate speech brings lot of negativity in people that if not curtailed can spiral into bigger issues like what we see around us in many cases. Hate speech can be targeted against individual, community, ideology etc. The social platforms with so many resources at hand are able to take care of it though much more is needed to cut it at the root.
+Social media brings people from all areas of society to shared spaces.  While a wide-variety of view points is usually a good thing, there is a small minority of speech, hate speech, that social media platforms consider to be hurtful to the platform and the community they're trying to build.  Hate speech can be targeted against and individual or group based on inherent characteristics, like race or gender.  The offensive speech disrupts social peace on these platforms and upsets the users.  The social media platforms use considerable resources to remove hate speech, by allowing users to flag offensive content and with automated algorithms, so the negative effects can be mitigated as soon as possible.
 
 With the advances in machine learning, many of the social media platforms have done a lot of great work in controlling the proliferation of hate speech by making use of classification algorithms but there is much more to be done to reduce the exposure to a great extent. They are successful in many ways but classifying the content to check if it indeed is hate is very complex as it depends on the context as well as whether its used loosely. There is lot of research done or going on classifying the text as well as augmenting such text.
 
@@ -82,7 +79,7 @@ Another issue has been the inconsistency in labeling across the publicly availab
 \section{Data}
 
 \subsection{Source Data Set}
-We use the jigaw dataset from kaggle competition that was derived out of reddit data. The data set consist of 3 files that includes the labeled training data, test data and the test labels. We combine the test data and labels file by joining them on the unique comment identifiers. The training data set has 159,000 samples while the test data set has 60,000 samples. We convert the comments into lowercase and clean the contents by removing punctuation and special characters. Once processed both are training and test data file  consist of the text comments and binary labels for the 6 categories listed below.
+We used the dataset from the Jigsaw Toxic Comment Classification Challenge held by Kaggle, that contains Wikipedia comments, that were labelled by human raters for various types of toxic content.  The data set consist of 3 files that includes the labeled training data, test data and the test labels (that was made available after the competition concluded).  We combine the test data and labels file by joining them on the unique comment identifiers. The training data set has 160,000 comments while the test data set has 64,000 comments. We converted the comments into lowercase and cleaned the contents by removing punctuation and special characters. Once processed both the training and test data  consisted of the text comments and binary labels for the 6 categories:
 
 \begin{itemize}
 \item toxic
@@ -93,24 +90,11 @@ We use the jigaw dataset from kaggle competition that was derived out of reddit 
 \item identity\_hate
 \end{itemize}
 
+
+
 \subsection{Data Balancing}
 Our source data is highly imbalanced. Out of the 6 labeled classes, 3 are majority classes with and 3 are minority classes.
-\begin{table}
-\centering
-\begin{tabular}{l r}
-\hline
-\textbf{Label} & \textbf{Count}\\
-\hline
-\verb|toxic| & 159000 \\
-\verb|severe_toxic| & 1500 \\
-\verb|obscene| & 500 \\ 
-\verb|threat| & 500 \\ 
-\verb|insult| & 500 \\
-\verb|identity_hate| & 500 \\
-\hline 
-\end{tabular}
-\caption{Distribution of toxicity labels in the source data set.}
-\end{table}
+
 
 \begin{figure}[h!]
 \centering
@@ -119,11 +103,24 @@ Our source data is highly imbalanced. Out of the 6 labeled classes, 3 are majori
 \label{Fig1. label count vs toxicity}
 \end{figure}
 
-\subsection{Undersampling Majority Class Data}
-To balance the data set for the 6 classes being identified, we use a combination of strategies. We undersample two of two majority classes severe\_toxic and obscene to select 2000 random samples each from the original training data set. Since the label toxic is set to True if any of the 
 
 \subsection{Augmenting Minority Class Data}
-To bring the available training data for minority classes to be closer in count to the majority classes more balanced To augment the data for minority classes identity\_hate, we chose to augment with the data available from the TOXIGEN dataset[2]
+We augmented the training data for minority classes to bring it closer in count to the majority classes.
+
+For \emph{severe\_toxic} and \emph{threat}, we used back-translation with Google Translate's API to supplement the training data.  For the smallest class, \emph{threat}, we back-translated all 476 comments using 3 languages - Chinese, Hindi and French - which along with the original comment quadrupled the number of comments in our training data.  For \emph{severe\_toxic}, we back translated 500 comments using Chinese, to supplement our training data.
+
+We supplemented \emph{identity\_hate} with 640 records created by Microsoft's Toxigen repository, which uses a large scale pretrained language model and a classifier to generate synthetic hate speech.  The repository includes two methods for generating hate speech:  Demonstration-Based Prompting and an adversarial set up between a classifier and a generator.  We included 320 records from each of the methods.
+
+\subsection{Undersampling Majority Class Data}
+To further balance the data set for the 6 identified classes, we selected all comments labelled with the minority classes, including augmented data.  Since many of these comments are also labelled with the majority classes, we only needed to select a small amount of additional comments, that were labelled with the majority classes, but not the minority classes, in order to get a dataset that was approximately balanced.
+
+
+\begin{figure}[h!]
+\centering
+\includegraphics[width=50mm,scale=0.5]{label_counts_balanced.png}
+\caption{Label Count for Balanced Data}
+\label{Fig2. label count vs toxicity}
+\end{figure}
 
 
 \section{Methods}
@@ -175,6 +172,12 @@ With above results, it was not prudent for us to pursue with T5 due to no improv
 
 \subsection{XLNet}
 
+Once T5 didn't give an improvement over Bert, we examined models that use a different approach to pre-training and implemented XLNet, which is an auto-regressive based model that does a better job of learning dependency pairs.
+
+We ran XLNet on both the unbalanced and balanced data, for 6 epochs on each.
+
+We found that XLNet gave us a modest improvement over Bert, both with balanced and unbalanced data.
+
 \section{Results and Discussion}
 
 Metrics were captured across multiple models that were tested as shown in Table ~\ref{table:UnBalResults} and Table ~\ref{table:BalResults}. Each model was run for multiple epochs to ensure proper outcome of metrics. Bert model was fine tuned by unfreezing different number of layers inorder for BERT to learn the toxic data. The data clearly shows how the model has improved with respect to F1 score as well as AUC-ROC numbers.
@@ -193,13 +196,13 @@ There is a clear indication of how each model shines given a balanced dataset. X
 \\
 \textbf{ } & \textbf{F1} & \textbf{AUC} & \textbf{AUC} & \textbf{AUC} & \textbf{AUC} & \textbf{AUC} & \textbf{AUC} & \textbf{AUC}\\
 \hline
-\verb|BERT Baseline|&0.2&0.56& 0.66 & 0.5 & 0.63 & 0.5 & 0.61 & 0.5 \\
-\verb|BERT 2-layers| & 0.5 & 0.74 & 0.88 & 0.6 & 0.87 & 0.57 & 0.8 \\
-\verb|BERT 4-layers| & 0.55 & 0.78 & 0.9 & 0.59 & 0.86 & 0.71 & 0.88 & 0.72 \\
-\verb|BERT 6-layers| & & & & & & & & \\
-\verb|BERT 12-layers| & 0.49 & 0.77 & 0.9 & 0.73 & 0.89 & 0.49 & 0.88 & 0.73 \\
-\verb|T5| & 0.07 & 0.59 & 0.53 & 0.94 & 0.51 & 0.58 & 0.5 & 0.5 \\
-\verb|XLNet| & & & & & & & & \\
+\verb|BERT Baseline|&0.20 & 0.56 & 0.66 & 0.50 & 0.63 & 0.50 & 0.61 & 0.50 \\
+\verb|BERT 2-layers| & 0.50 & 0.74 & 0.88 & 0.60 & 0.87 & 0.57 & 0.80 & 0.71 \\
+\verb|BERT 4-layers| & 0.55 & 0.78 & 0.90 & 0.59 & 0.86 & 0.71 & 0.88 & 0.72 \\
+\verb|BERT 6-layers| & 0.58 & 0.85 & 0.91 & 0.83 & 0.89 & 0.85 & 0.87 & 0.73 \\
+\verb|BERT 12-layers| & 0.49 & 0.77 & 0.90 & 0.73 & 0.89 & 0.49 & 0.88 & 0.73 \\
+\verb|T5| & 0.07 & 0.59 & 0.53 & 0.94 & 0.51 & 0.58 & 0.50 & 0.50 \\
+\verb|XLNet| & 0.60 & 0.82 & 0.90 & 0.69 & 0.87 & 0.75 & 0.87 & 0.85 \\
 \hline
 \end{tabular}
 \caption{Metrics - All Models trained with original unbalanced data}
@@ -214,13 +217,13 @@ There is a clear indication of how each model shines given a balanced dataset. X
 \\
 \textbf{ } & \textbf{F1} & \textbf{AUC} & \textbf{AUC} & \textbf{AUC} & \textbf{AUC} & \textbf{AUC} & \textbf{AUC} & \textbf{AUC}\\
 \hline
-\verb|Bert Baseline| & 0.05 & 0.51 & 0.57 & 0.5 & 0.5 & 0.49 & 0.5 & 0.5 \\
+\verb|Bert Baseline| & 0.05 & 0.51 & 0.57 & 0.5 & 0.50 & 0.49 & 0.50 & 0.50 \\
 \verb|Bert 2 layers| & 0.42 & 0.86 & 0.85 & 0.79 & 0.87 & 0.91 & 0.83 & 0.89 \\
-\verb|Bert 4 layers| & 0.44 & 0.87 & 0.6 & 0.88 & 0.87 & 0.92 & 0.83 & 0.88 \\
-\verb|Bert 6 layers| & 0.5 & 0.83 & 0.87 & 0.73 & 0.83 & 0.88 & 0.79 & 0.9 \\
+\verb|Bert 4 layers| & 0.44 & 0.87 & 0.60 & 0.88 & 0.87 & 0.92 & 0.83 & 0.88 \\
+\verb|Bert 6 layers| & 0.50 & 0.83 & 0.87 & 0.73 & 0.83 & 0.88 & 0.79 & 0.90 \\
 \verb|Bert 12 layers| & 0.51 & 0.89 & 0.89 & 0.87 & 0.88 & 0.9 & 0.87 & 0.91 \\
-\verb|T5| & 0.12 & 0.61 & 0.77 & 0.92 & 0.52 & 0.49 & 0.5 & 0.5 \\
-\verb|XLNet| & 0.42 & 0.89 & 0.89 & 0.83 & 0.89 & 0.95 & 0.88 & 0.92 \\
+\verb|T5| & 0.12 & 0.61 & 0.77 & 0.92 & 0.52 & 0.49 & 0.50 & 0.50 \\
+\verb|XLNet| & 0.42 & 0.90 & 0.89 & 0.83 & 0.90 & 0.95 & 0.89 & 0.93 \\
 \hline
 \end{tabular}
 \caption{Metrics - All Models trained with augmented balanced data}
