@@ -17,6 +17,7 @@
 \usepackage{times}
 \usepackage{latexsym}
 \usepackage{graphicx}
+\usepackage{url}
 \renewcommand{\UrlFont}{\ttfamily\small}
 
 % This is not strictly necessary, and may be commented out,
@@ -70,12 +71,12 @@ The ability in building accurate models to correctly classify hateful content is
 We use three large language models: BERT, T5 and XLNet and fine-tune them for a multi label classification task using our data set that has been labeled with the 6 toxicity classes. 
 
 2) Our source data set is highly imbalanced and has very limited data for three out of the six categories. We use a combination of approaches to balance our data set to help the model balance learning across all categories. 
-We have three minority categories: threat, severe-toxic and identity\_hate that have very low representation in our training data set. We use the TOXIGEN(Hartvigsen et al., ACL 2022) data set to augment data for the identity\_hate class. To augment data for the other classes, we use back translation to generate additional samples from the existing data. 
+We have three minority categories: threat, severe-toxic and identity\_hate that have very low representation in our training data set. We use the TOXIGEN \cite{hartvigsen2022toxigen} data set to augment data for the identity\_hate class. To augment data for the other classes, we use back translation to generate additional samples from the existing data. 
 
 
 \section{Background}
 There has been a lot of research and previous work done with focus on toxic content  classification and a few different pathways have been explored to improve the accuracy of classification. 
-The unavailability of enough quality labeled data has been widely accepted as a limitation in the ability to create accurate models for toxic content classification. (Rastogi et al.) has explored generating synthetic data using EDA and back translation to augment the training data and reported improved recall and F1 scores. (Hartvigsen et al., ACL 2022) have explored the complexity of identifying implicit identity\_hate targeted at minority groups and used GPT-2 to generate additional data to augment the current available human labeled data sets. 
+The unavailability of enough quality labeled data has been widely accepted as a limitation in the ability to create accurate models for toxic content classification. \cite{rastogi2020can} has explored generating synthetic data using EDA and back translation to augment the training data and reported improved recall and F1 scores. \cite{hartvigsen2022toxigen} have explored the complexity of identifying implicit identity\_hate targeted at minority groups and used GPT-2 to generate additional data to augment the current available human labeled data sets. 
 Another issue has been the inconsistency in labeling across the publicly available data sets limiting the generalization of trained models. 
 
 \section{Data}
@@ -166,17 +167,17 @@ The first classifier with retraining only the top 2 BERT layers gave as a huge i
 
 
 \subsection{T5}
-We used T5-small on the unbalanced training dataset similar to BERT. As part of the multilabel classification a language modeling head is used on top of the decoder. The model was run 2 epochs with 8 and 16 batch size. We saw 
+We used T5-small \cite{raffel2020exploring} on the unbalanced training dataset similar to BERT. The model was adopted from \cite{t5mlcode}. As part of the multilabel classification a language modeling head is used on top of the decoder. The model was run 2 epochs with 8 and 16 batch size. The lesser epochs was because of the time the model was taking to train and predict. The model was very biased towards the higher dataset and also failed to predict the lower classes (insult, identity\_hate) which can be seen from the lower ROC-AUC scores.
 
-It can be noted that certain classes like insult and identity hate have 0 f1-score whereas the hamming loss seems to be better. The two classes whose f1 scores are 0 depicts that this model is not good for this job. This can be due to the imbalance in the data for those two classes.
+The same experiment was repeated with balanced dataset for 2 epocks and 16 batch size. The results were similar to what was seen with unbalanced dataset. It was still not predicting the classes insult and identity\_hate properly.
 
-
+With above results, it was not prudent for us to pursue with T5 due to no improvement in the metrics.
 
 \subsection{XLNet}
 
 \section{Results and Discussion}
 
-Metrics were captured across multiple models that were tested as shown in Table ~\ref{table:UnBalResults} and Table ~\ref{table:BalResults}. Each model was run for multiple epochs to ensure proper outcome of metrics. Bert model was fine tuned by unfreezing different number of layers inorder for BERT to learn the toxic data. The data clearly shows how the model has improved with respect to F1 score as well as AUC-ROC numbersi and hamming loss. 
+Metrics were captured across multiple models that were tested as shown in Table ~\ref{table:UnBalResults} and Table ~\ref{table:BalResults}. Each model was run for multiple epochs to ensure proper outcome of metrics. Bert model was fine tuned by unfreezing different number of layers inorder for BERT to learn the toxic data. The data clearly shows how the model has improved with respect to F1 score as well as AUC-ROC numbers.
 
 T5 was applied on unbalanced data and balanced data. But, the metrics are not too significantly different to say one of them is better.
 
@@ -192,13 +193,13 @@ There is a clear indication of how each model shines given a balanced dataset. X
 \\
 \textbf{ } & \textbf{F1} & \textbf{AUC} & \textbf{AUC} & \textbf{AUC} & \textbf{AUC} & \textbf{AUC} & \textbf{AUC} & \textbf{AUC}\\
 \hline
-\verb|BERT Baseline|&0.2&0.56& 0.66 & 0.5 & 0.63 & 0.5 & 0.61 & 0.5 & 0.03 \\
-\verb|BERT 2-layers| & 0.5 & 0.74 & 0.88 & 0.6 & 0.87 & 0.57 & 0.8 & 0.02 \\
-\verb|BERT 4-layers| & 0.55 & 0.78 & 0.9 & 0.59 & 0.86 & 0.71 & 0.88 & 0.72 & 0.03 \\
-\verb|BERT 6-layers| & & & & & & & & & \\
-\verb|BERT 12-layers| & 0.49 & 0.77 & 0.9 & 0.73 & 0.89 & 0.49 & 0.88 & 0.73 & 0.03 \\
-\verb|T5| & 0.07 & 0.59 & 0.53 & 0.94 & 0.51 & 0.58 & 0.5 & 0.5 & 0.04 \\
-\verb|XLNet| & & & & & & & & & \\
+\verb|BERT Baseline|&0.2&0.56& 0.66 & 0.5 & 0.63 & 0.5 & 0.61 & 0.5 \\
+\verb|BERT 2-layers| & 0.5 & 0.74 & 0.88 & 0.6 & 0.87 & 0.57 & 0.8 \\
+\verb|BERT 4-layers| & 0.55 & 0.78 & 0.9 & 0.59 & 0.86 & 0.71 & 0.88 & 0.72 \\
+\verb|BERT 6-layers| & & & & & & & & \\
+\verb|BERT 12-layers| & 0.49 & 0.77 & 0.9 & 0.73 & 0.89 & 0.49 & 0.88 & 0.73 \\
+\verb|T5| & 0.07 & 0.59 & 0.53 & 0.94 & 0.51 & 0.58 & 0.5 & 0.5 \\
+\verb|XLNet| & & & & & & & & \\
 \hline
 \end{tabular}
 \caption{Metrics - All Models trained with original unbalanced data}
@@ -213,13 +214,13 @@ There is a clear indication of how each model shines given a balanced dataset. X
 \\
 \textbf{ } & \textbf{F1} & \textbf{AUC} & \textbf{AUC} & \textbf{AUC} & \textbf{AUC} & \textbf{AUC} & \textbf{AUC} & \textbf{AUC}\\
 \hline
-\verb|Bert Baseline| & 0.05 & 0.51 & 0.57 & 0.5 & 0.5 & 0.49 & 0.5 & 0.5 & 0.03 \\
-\verb|Bert 2 layers| & 0.42 & 0.86 & 0.85 & 0.79 & 0.87 & 0.91 & 0.83 & 0.89 & 0.05 \\
-\verb|Bert 4 layers| & 0.44 & 0.87 & 0.6 & 0.88 & 0.87 & 0.92 & 0.83 & 0.88 & 0.05 \\
-\verb|Bert 6 layers| & 0.5 & 0.83 & 0.87 & 0.73 & 0.83 & 0.88 & 0.79 & 0.9 & 0.03 \\
-\verb|Bert 12 layers| & 0.51 & 0.89 & 0.89 & 0.87 & 0.88 & 0.9 & 0.87 & 0.91 & 0.04 \\
-\verb|T5| & 0.12 & 0.61 & 0.77 & 0.92 & 0.52 & 0.49 & 0.5 & 0.5 & 0.05 \\
-\verb|XLNet| & 0.42 & 0.89 & 0.89 & 0.83 & 0.89 & 0.95 & 0.88 & 0.92 & \\
+\verb|Bert Baseline| & 0.05 & 0.51 & 0.57 & 0.5 & 0.5 & 0.49 & 0.5 & 0.5 \\
+\verb|Bert 2 layers| & 0.42 & 0.86 & 0.85 & 0.79 & 0.87 & 0.91 & 0.83 & 0.89 \\
+\verb|Bert 4 layers| & 0.44 & 0.87 & 0.6 & 0.88 & 0.87 & 0.92 & 0.83 & 0.88 \\
+\verb|Bert 6 layers| & 0.5 & 0.83 & 0.87 & 0.73 & 0.83 & 0.88 & 0.79 & 0.9 \\
+\verb|Bert 12 layers| & 0.51 & 0.89 & 0.89 & 0.87 & 0.88 & 0.9 & 0.87 & 0.91 \\
+\verb|T5| & 0.12 & 0.61 & 0.77 & 0.92 & 0.52 & 0.49 & 0.5 & 0.5 \\
+\verb|XLNet| & 0.42 & 0.89 & 0.89 & 0.83 & 0.89 & 0.95 & 0.88 & 0.92 \\
 \hline
 \end{tabular}
 \caption{Metrics - All Models trained with augmented balanced data}
@@ -236,4 +237,6 @@ Thomas Hartvigsen, Saadia Gabriel, Hamid Palangi, Maarten Sap, Dipankar Ray, and
 Toxic, Hateful, Offensive or Abusive? What Are We Really Classifying ... https://aclanthology.org/2020.lrec-1.838.pdf.\\\\
 Singh, Trisha, and Davide Giovanardi. How Much Does Pre-Trained Information Help? Partially Re-Initializing BERT during Fine-Tuning to Analyze the Contribution of Layers Stanford CS224N {Custom} Project.
 
+\bibliographystyle{apalike}
+\bibliography{acl2020}
 \end{document}
