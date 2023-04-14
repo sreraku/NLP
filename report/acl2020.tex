@@ -166,7 +166,7 @@ The first classifier with retraining only the top 2 BERT layers gave as a huge i
 
 
 \subsection{T5}
-Another model we used is T5-small. We used the model on fine tuned baseline training dataset similart to BERT which was stratified. We used huggingface Transformers library to achieve this task. The pretrained T5 model is used to do text-text conversion. As part of the multilabel classification a language modeling head is used on top of the decoder. The model was run 2 epochs with 8 and 16 batch size. Both the runs gave almost similar results. Table 3 provides the f1 scores, precision and recall across all 6 label classes. 
+We used T5-small on the unbalanced training dataset similar to BERT. As part of the multilabel classification a language modeling head is used on top of the decoder. The model was run 2 epochs with 8 and 16 batch size. We saw 
 
 It can be noted that certain classes like insult and identity hate have 0 f1-score whereas the hamming loss seems to be better. The two classes whose f1 scores are 0 depicts that this model is not good for this job. This can be due to the imbalance in the data for those two classes.
 
