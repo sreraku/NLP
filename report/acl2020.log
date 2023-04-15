@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2023.3.11)  14 APR 2023 18:54
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2023.3.11)  14 APR 2023 21:55
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -257,6 +257,9 @@ Package graphics Info: Driver file: pdftex.def on input line 107.
 \Gin@req@height=\dimen154
 \Gin@req@width=\dimen155
 )
+(/usr/local/texlive/2022/texmf-dist/tex/latex/parskip/parskip.sty
+Package: parskip 2021-03-14 v2.0h non-zero parskip adjustments
+)
 (/usr/local/texlive/2022/texmf-dist/tex/latex/microtype/microtype.sty
 Package: microtype 2022/03/14 v3.0d Micro-typographical refinements (RS)
 \MT@toks=\toks17
@@ -283,7 +286,7 @@ Package microtype Info: Loading configuration file microtype.cfg.
 File: microtype.cfg 2022/03/14 v3.0d microtype main configuration file (RS)
 ))
 LaTeX Font Info:    Trying to load font information for OT1+ptm on input line 5
-2.
+3.
 
 (/usr/local/texlive/2022/texmf-dist/tex/latex/psnfss/ot1ptm.fd
 File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
@@ -296,25 +299,25 @@ File: l3backend-pdftex.def 2022-02-07 L3 backend support: PDF output (pdfTeX)
 (./acl2020.aux)
 \openout1 = `acl2020.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 52.
-LaTeX Font Info:    ... okay on input line 52.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 52.
-LaTeX Font Info:    ... okay on input line 52.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 52.
-LaTeX Font Info:    ... okay on input line 52.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 52.
-LaTeX Font Info:    ... okay on input line 52.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 52.
-LaTeX Font Info:    ... okay on input line 52.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 52.
-LaTeX Font Info:    ... okay on input line 52.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 52.
-LaTeX Font Info:    ... okay on input line 52.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 52.
-LaTeX Font Info:    ... okay on input line 52.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 52.
-LaTeX Font Info:    ... okay on input line 52.
-Package hyperref Info: Link coloring ON on input line 52.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 53.
+LaTeX Font Info:    ... okay on input line 53.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 53.
+LaTeX Font Info:    ... okay on input line 53.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 53.
+LaTeX Font Info:    ... okay on input line 53.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 53.
+LaTeX Font Info:    ... okay on input line 53.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 53.
+LaTeX Font Info:    ... okay on input line 53.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 53.
+LaTeX Font Info:    ... okay on input line 53.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 53.
+LaTeX Font Info:    ... okay on input line 53.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 53.
+LaTeX Font Info:    ... okay on input line 53.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 53.
+LaTeX Font Info:    ... okay on input line 53.
+Package hyperref Info: Link coloring ON on input line 53.
 
 (/usr/local/texlive/2022/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2021-04-02 v2.47 Cross-referencing by name of section
@@ -328,9 +331,9 @@ Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
 \c@section@level=\count281
 )
-LaTeX Info: Redefining \ref on input line 52.
-LaTeX Info: Redefining \pageref on input line 52.
-LaTeX Info: Redefining \nameref on input line 52.
+LaTeX Info: Redefining \ref on input line 53.
+LaTeX Info: Redefining \pageref on input line 53.
+LaTeX Info: Redefining \nameref on input line 53.
  (./acl2020.out) (./acl2020.out)
 \@outlinefile=\write3
 \openout3 = `acl2020.out'.
@@ -361,18 +364,18 @@ e
 ABD: EveryShipout initializing macros
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: End \AtBeginDocument code.
-LaTeX Info: Redefining \microtypecontext on input line 52.
-Package microtype Info: Applying patch `item' on input line 52.
-Package microtype Info: Applying patch `toc' on input line 52.
-Package microtype Info: Applying patch `eqnum' on input line 52.
-Package microtype Info: Applying patch `footnote' on input line 52.
+LaTeX Info: Redefining \microtypecontext on input line 53.
+Package microtype Info: Applying patch `item' on input line 53.
+Package microtype Info: Applying patch `toc' on input line 53.
+Package microtype Info: Applying patch `eqnum' on input line 53.
+Package microtype Info: Applying patch `footnote' on input line 53.
 Package microtype Info: Generating PDF output.
 Package microtype Info: Character protrusion enabled (level 2).
 Package microtype Info: Using default protrusion set `alltext'.
 Package microtype Info: Automatic font expansion enabled (level 2),
 (microtype)             stretch: 20, shrink: 20, step: 1, non-selected.
 Package microtype Info: Using default expansion set `alltext-nott'.
-LaTeX Info: Redefining \showhyphens on input line 52.
+LaTeX Info: Redefining \showhyphens on input line 53.
 Package microtype Info: No adjustment of tracking.
 Package microtype Info: No adjustment of interword spacing.
 Package microtype Info: No adjustment of character kerning.
@@ -385,23 +388,26 @@ File: mt-cmr.cfg 2013/05/19 v2.2 microtype config. file: Computer Modern Roman
 (RS)
 )
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <12> on input line 53.
+(Font)              <12> on input line 54.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <8> on input line 53.
+(Font)              <8> on input line 54.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <6> on input line 53.
-LaTeX Font Info:    Trying to load font information for U+lasy on input line 53
+(Font)              <6> on input line 54.
+LaTeX Font Info:    Trying to load font information for U+lasy on input line 54
 .
 
 (/usr/local/texlive/2022/texmf-dist/tex/latex/base/ulasy.fd
 File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
-) [1{/usr/local/texlive/2022/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
+)
+Underfull \vbox (badness 6157) has occurred while \output is active []
+
+ [1{/usr/local/texlive/2022/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
 
 
 
 ]
 LaTeX Font Info:    Trying to load font information for TS1+ptm on input line 8
-6.
+7.
 
 (/usr/local/texlive/2022/texmf-dist/tex/latex/psnfss/ts1ptm.fd
 File: ts1ptm.fd 2001/06/04 font definitions for TS1/ptm.
@@ -409,103 +415,110 @@ File: ts1ptm.fd 2001/06/04 font definitions for TS1/ptm.
 <label_counts.png, id=18, 777.65532pt x 533.74406pt>
 File: label_counts.png Graphic file (type png)
 <use label_counts.png>
-Package pdftex.def Info: label_counts.png  used on input line 102.
+Package pdftex.def Info: label_counts.png  used on input line 103.
 (pdftex.def)             Requested size: 388.8267pt x 266.87137pt.
- [2 <./label_counts.png>]
-<label_counts_balanced.png, id=35, 776.14969pt x 531.48563pt>
+
+Underfull \hbox (badness 2111) in paragraph at lines 114--115
+[]\OT1/ptm/m/n/10.95 (+20) We sup-ple-mented \OT1/ptm/m/it/10.95 (+20) iden-tit
+y[]hate \OT1/ptm/m/n/10.95 (+20) with 640
+ []
+
+[2 <./label_counts.png>]
+<label_counts_balanced.png, id=34, 776.14969pt x 531.48563pt>
 File: label_counts_balanced.png Graphic file (type png)
 <use label_counts_balanced.png>
-Package pdftex.def Info: label_counts_balanced.png  used on input line 121.
+Package pdftex.def Info: label_counts_balanced.png  used on input line 122.
 (pdftex.def)             Requested size: 388.0739pt x 265.74216pt.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <10.95> on input line 136.
+(Font)              <10.95> on input line 137.
 LaTeX Font Info:    Trying to load font information for OT1+pcr on input line 1
-40.
- (/usr/local/texlive/2022/texmf-dist/tex/latex/psnfss/ot1pcr.fd
+41.
+
+(/usr/local/texlive/2022/texmf-dist/tex/latex/psnfss/ot1pcr.fd
 File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
 )
 Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `pcr' (encoding: OT1).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
-
-[3 <./label_counts_balanced.png>]
-Overfull \hbox (24.49452pt too wide) in paragraph at lines 188--203
+ [3 <./label_counts_balanced.png>]
+Overfull \hbox (24.49452pt too wide) in paragraph at lines 189--204
  [][] 
  []
 
 
-Overfull \hbox (24.49452pt too wide) in paragraph at lines 209--224
+Overfull \hbox (24.49452pt too wide) in paragraph at lines 210--225
  [][] 
  []
 
 
 LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `tbp') on input line 236.
+               Default added (so using `tbp') on input line 239.
 
 <Unbalanced Data Set.png, id=64, 558.085pt x 329.23pt>
 File: Unbalanced Data Set.png Graphic file (type png)
 <use Unbalanced Data Set.png>
-Package pdftex.def Info: Unbalanced Data Set.png  used on input line 238.
+Package pdftex.def Info: Unbalanced Data Set.png  used on input line 241.
 (pdftex.def)             Requested size: 279.04182pt x 164.6146pt.
 
 LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `tbp') on input line 243.
+               Default added (so using `tbp') on input line 246.
 
 <Balanced Data Set.png, id=65, 558.085pt x 329.23pt>
 File: Balanced Data Set.png Graphic file (type png)
 <use Balanced Data Set.png>
-Package pdftex.def Info: Balanced Data Set.png  used on input line 245.
+Package pdftex.def Info: Balanced Data Set.png  used on input line 248.
 (pdftex.def)             Requested size: 279.04182pt x 164.6146pt.
 [4 <./Unbalanced Data Set.png> <./Balanced Data Set.png>] (./acl2020.bbl
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <9> on input line 14.
+(Font)              <9> on input line 20.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <5> on input line 14.
+(Font)              <5> on input line 20.
 
-Underfull \hbox (badness 10000) in paragraph at lines 11--16
+Underfull \hbox (badness 10000) in paragraph at lines 17--22
 []\OT1/ptm/m/n/10 (+20) Jaunjale, P. (2020).  T5 - Multi La-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 11--16
+Underfull \hbox (badness 10000) in paragraph at lines 17--22
 \OT1/ptm/m/n/10 (+20) bel Clas-si-fi-ca-tion.  [][]$\OT1/pcr/m/n/9 https : / / 
 www .
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 11--16
+Underfull \hbox (badness 10000) in paragraph at lines 17--22
 \OT1/pcr/m/n/9 kaggle . com / code / prithvijaunjale /
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 11--16
-\OT1/pcr/m/n/9 t5-[]multi-[]label-[]classification / notebook$[][]\OT1/ptm/m/n/
-10 (+20) .
+Underfull \hbox (badness 10000) in paragraph at lines 17--22
+\OT1/pcr/m/n/9 t5-[]multi-[]label-[]classification /
  []
 
-) [5] (./acl2020.aux)
+[5]) [6
+
+] (./acl2020.aux)
 Package rerunfilecheck Info: File `acl2020.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  )
 (\end occurred when \ifx on line 17 was incomplete) 
 Here is how much of TeX's memory you used:
- 12906 strings out of 478268
- 208786 string characters out of 5846347
- 545207 words of memory out of 5000000
- 30695 multiletter control sequences out of 15000+600000
- 497933 words of font info for 211 fonts, out of 8000000 for 9000
+ 12956 strings out of 478268
+ 209978 string characters out of 5846347
+ 545988 words of memory out of 5000000
+ 30736 multiletter control sequences out of 15000+600000
+ 498168 words of font info for 214 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 75i,11n,77p,1133b,407s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 75i,11n,77p,1133b,455s stack positions out of 10000i,1000n,20000p,200000b,200000s
 {/usr/local/texlive/2022/tex
 mf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/texlive/2022/texmf-dist/fonts/t
 ype1/urw/courier/ucrr8a.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/urw
 /times/utmb8a.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/urw/times/utm
 r8a.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on acl2020.pdf (5 pages, 181155 bytes).
+Output written on acl2020.pdf (6 pages, 182999 bytes).
 PDF statistics:
- 118 PDF objects out of 1000 (max. 8388607)
- 94 compressed objects within 1 object stream
- 36 named destinations out of 1000 (max. 500000)
+ 130 PDF objects out of 1000 (max. 8388607)
+ 104 compressed objects within 2 object streams
+ 38 named destinations out of 1000 (max. 500000)
  39445 words of extra memory for PDF output out of 42996 (max. 10000000)
 
