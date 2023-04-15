@@ -15,6 +15,7 @@
 \documentclass[11pt,a4paper]{article}
 \usepackage[hyperref]{acl2020}
 \usepackage{times}
+\usepackage{placeins}
 \usepackage{latexsym}
 \usepackage{graphicx}
 \usepackage{url}
@@ -172,23 +173,17 @@ With above results, it was not prudent for us to pursue with T5 due to no improv
 
 \subsection{XLNet}
 
-Once T5 didn't give an improvement over Bert, we examined models that use a different approach to pre-training and implemented XLNet, which is an auto-regressive based model that does a better job of learning dependency pairs.
+Once T5 didn't give an improvement over Bert, we examined models that use a different approach to pre-training and implemented XLNet (\cite{yang2019xlnet}, which is an auto-regressive based model that does a better job of learning dependency pairs.
 
 We ran XLNet on both the unbalanced and balanced data, for 6 epochs on each.
 
 We found that XLNet gave us a modest improvement over Bert, both with balanced and unbalanced data.
 
+\FloatBarrier
 \section{Results and Discussion}
 
-Metrics were captured across multiple models that were tested as shown in Table ~\ref{table:UnBalResults} and Table ~\ref{table:BalResults}. Each model was run for multiple epochs to ensure proper outcome of metrics. Bert model was fine tuned by unfreezing different number of layers inorder for BERT to learn the toxic data. The data clearly shows how the model has improved with respect to F1 score as well as AUC-ROC numbers.
-
-T5 was applied on unbalanced data and balanced data. But, the metrics are not too significantly different to say one of them is better.
-
-Similarly XLNet model was applied on both unbalanced as well as balanced dataset.
-
-There is a clear indication of how each model shines given a balanced dataset. XLNet clearly shows its predictions are way better than the other two models.
-
 \begin{table*}
+
 \centering
 \begin{tabular}{lrrrrrrrrrr}
 \hline
@@ -221,7 +216,7 @@ There is a clear indication of how each model shines given a balanced dataset. X
 \verb|Bert 2 layers| & 0.42 & 0.86 & 0.85 & 0.79 & 0.87 & 0.91 & 0.83 & 0.89 \\
 \verb|Bert 4 layers| & 0.44 & 0.87 & 0.60 & 0.88 & 0.87 & 0.92 & 0.83 & 0.88 \\
 \verb|Bert 6 layers| & 0.50 & 0.83 & 0.87 & 0.73 & 0.83 & 0.88 & 0.79 & 0.90 \\
-\verb|Bert 12 layers| & 0.51 & 0.89 & 0.89 & 0.87 & 0.88 & 0.9 & 0.87 & 0.91 \\
+\verb|Bert 12 layers| & 0.51 & 0.89 & 0.89 & 0.87 & 0.88 & 0.90 & 0.87 & 0.91 \\
 \verb|T5| & 0.12 & 0.61 & 0.77 & 0.92 & 0.52 & 0.49 & 0.50 & 0.50 \\
 \verb|XLNet| & 0.42 & 0.90 & 0.89 & 0.83 & 0.90 & 0.95 & 0.89 & 0.93 \\
 \hline
@@ -230,9 +225,33 @@ There is a clear indication of how each model shines given a balanced dataset. X
 \label{table:BalResults}
 \end{table*}
 
-\section{Error Analysis}
+Metrics were captured across multiple models that were tested as shown in Table ~\ref{table:UnBalResults} and Table ~\ref{table:BalResults}. Each model was run for multiple epochs to ensure proper outcome of metrics. Bert model was fine tuned by unfreezing different number of layers inorder for BERT to learn the toxic data. The data clearly shows how the model has improved with respect to F1 score as well as AUC-ROC numbers.
+
+T5 was applied on unbalanced data and balanced data. But, the metrics are not too significantly different to say one of them is better.
+
+Similarly XLNet model was applied on both unbalanced as well as balanced dataset.
+
+There is a clear indication of how each model shines given a balanced dataset. Referring to Figures ~\ref{UnbalancedData} and ~\ref{BalancedData} XLNet clearly shows its predictions are way better than the other two models.
+
+\begin{figure}[]
+\centering
+\includegraphics[width=75mm,scale=0.5]{Unbalanced Data Set.png}
+\caption{Unbalanced Data set}
+\label{UnbalancedData}
+\end{figure}
+
+\begin{figure}[]
+\centering
+\includegraphics[width=75mm,scale=0.5]{Balanced Data Set.png}
+\caption{Balanced Data set}
+\label{BalancedData}
+\end{figure}
+\FloatBarrier
 
 \section{Conclusion}
+In conclusion we found that the benefits of a pre-trained large language model are limited by the vocabulary that it was trained on. With Bert being trained only on wikipedia data it hasnt seen the same level of toxic content as in our training dataset which makes it harder to classify toxic comments correctly.
+T5 was pre-trained on a big corpus of data (C4) where it would have picked up some toxic labels. The metrics for severe\_toxic in Table \ref{table:BalResults} as well as \ref{table:UnBalResults} clearly shows that it is biased towards that label due to some pre learning whereas few other classes were left out.
+With XLNet outshining the other two models in the metrics, we can clearly say that XLNet can be used for multi label classification on toxic data
 
 \section{Future work}
 Our experiments with different models was based on the toxic dataset and some augmentation that was done to balance it. One area we didnot focus on is unbiased training or providing unbiased dataset. So, there may be some biases that are exhibited with the training we did for the dataset we obtained. This is one area we can look at in the future.
