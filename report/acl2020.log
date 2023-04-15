@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2023.3.11)  14 APR 2023 21:55
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2023.3.11)  14 APR 2023 22:12
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -469,7 +469,11 @@ File: Balanced Data Set.png Graphic file (type png)
 <use Balanced Data Set.png>
 Package pdftex.def Info: Balanced Data Set.png  used on input line 248.
 (pdftex.def)             Requested size: 279.04182pt x 164.6146pt.
-[4 <./Unbalanced Data Set.png> <./Balanced Data Set.png>] (./acl2020.bbl
+[4 <./Unbalanced Data Set.png> <./Balanced Data Set.png>]
+Underfull \vbox (badness 3158) has occurred while \output is active []
+
+
+(./acl2020.bbl
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <9> on input line 20.
 LaTeX Font Info:    External font `cmex10' loaded for size
@@ -498,6 +502,9 @@ Underfull \hbox (badness 10000) in paragraph at lines 17--22
 [5]) [6
 
 ] (./acl2020.aux)
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
 Package rerunfilecheck Info: File `acl2020.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  )
@@ -509,13 +516,13 @@ Here is how much of TeX's memory you used:
  30736 multiletter control sequences out of 15000+600000
  498168 words of font info for 214 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 75i,11n,77p,1133b,455s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 75i,11n,77p,1132b,453s stack positions out of 10000i,1000n,20000p,200000b,200000s
 {/usr/local/texlive/2022/tex
 mf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/texlive/2022/texmf-dist/fonts/t
 ype1/urw/courier/ucrr8a.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/urw
 /times/utmb8a.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/urw/times/utm
 r8a.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on acl2020.pdf (6 pages, 182999 bytes).
+Output written on acl2020.pdf (6 pages, 183008 bytes).
 PDF statistics:
  130 PDF objects out of 1000 (max. 8388607)
  104 compressed objects within 2 object streams
