@@ -76,7 +76,7 @@ We have three minority categories: threat, severe-toxic and identity\_hate that 
 \section{Background}
 There has been a lot of research and previous work done with focus on toxic content  classification and a few different pathways have been explored to improve the accuracy of classification. 
 The unavailability of enough quality labeled data has been widely accepted as a limitation in the ability to create accurate models for toxic content classification. \cite{rastogi2020can} has explored generating synthetic data using EDA and back translation to augment the training data and reported improved recall and F1 scores. \cite{hartvigsen2022toxigen} have explored the complexity of identifying implicit identity\_hate targeted at minority groups and used GPT-2 to generate additional data to augment the current available human labeled data sets. 
-Another issue has been the inconsistency in labeling across the publicly available data sets limiting the generalization of trained models. 
+Another issue has been the inconsistency in labeling across the publicly available data sets limiting the generalization of trained models \cite{fortuna2020toxic}. 
 
 \section{Data}
 
@@ -264,5 +264,5 @@ For future work we would like to evaluate and optimize our model for fairness ac
 We have seen that each of the model has its own area of strength. So, we would like to create and  ensemble model derived from the strengths shown by BERT, T5 and XLNet. 
 
 \bibliographystyle{apalike}
-\bibliography{acl2020}
+\bibliography{finalproject}
 \end{document}
