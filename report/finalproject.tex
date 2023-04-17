@@ -53,19 +53,19 @@
 \begin{document}
 \maketitle
 \begin{abstract}
-With the advent of social media, people have had access to propagate hate anonymously, making it more dangerous than ever as the impact is not contained by a social group or geographic area any more. It is very important for social media companies to accurately identify hateful content and a lot of work has been already done to classify online content as toxic vs non-toxic for content moderation. We would like to extend this classification from binary to a a multi label classification and identify the specific hate categories toxic content belongs to. This information can be used by socio-political studies exploring the relationship between specific social-political events and their impact on triggering hateful content in online media. In this paper, we fine-tune three pre-trained large language models for a multi-label classification task to categorize text comments as \emph{toxic}, \emph{severe\_toxic}, \emph{obscene}, \emph{threat}, \emph{insult} and \emph{identity\_hate}. To tackle the imbalance of available training data, we use back translation using multiple intermediate to augment training data for the minority classes.
+The rise of social media has enabled individuals to spread hate anonymously, creating a greater danger than ever before because its impact is no longer limited to a specific social group or geographic region. It is very important for social media companies to accurately identify hateful content and a lot of work has already been done to classify online content as toxic vs non-toxic for content moderation. We would like to extend this classification from binary to multi-label, in order to identify the specific hate categories that each toxic content belongs to. This information can be used by socio-political studies exploring the relationship between specific social-political events and their impact on triggering hateful content in online media. In this paper, we fine-tune three pre-trained large language models for a multi-label classification task to categorize text comments as \emph{toxic}, \emph{severe\_toxic}, \emph{obscene}, \emph{threat}, \emph{insult} and \emph{identity\_hate}. To tackle the imbalance of available training data, we use back translation using multiple intermediary languages to augment training data for the minority classes.
 
 \end{abstract}
 
 \section{Introduction}
 
-Social media brings people from all areas of society to shared spaces.  While a wide-variety of view points is usually a good thing, there is a small minority of speech, hate speech, that social media platforms consider to be hurtful to the platform and the community they're trying to build.  Hate speech can be targeted against and individual or group based on inherent characteristics, like race or gender.  The offensive speech disrupts social peace on these platforms and upsets the users.  The social media platforms use considerable resources to remove hate speech, by allowing users to flag offensive content and with automated algorithms, so the negative effects can be mitigated as soon as possible.
+Social media brings people from all areas of society to shared spaces.  While a wide-variety of view points is usually a good thing, there is a small minority of speech, hate speech, that social media platforms consider to be hurtful to the platform and the community they're trying to build.  Hate speech can be targeted against and individual or group based on inherent characteristics, like race or gender.  The offensive speech disrupts social peace on these platforms and upsets the users.  The social media platforms expend considerable resources to remove hate speech, by allowing users to flag offensive content and with automated algorithms, so the derogatory comments can be remove and negative effects mitigated as soon as possible.
 
 With the advances in machine learning, many social media platforms have made large progress in controlling the proliferation of hate speech by making use of classification algorithms but there is much more to be done to reduce the exposure of online hate.  However, due to the complex nature of speech, where the meaning of words change based on context and over time, there is still much progress to be made in this area.
 
 % They are successful in many ways but classifying the content to check if it indeed is hate is very complex as it depends on the context as well as whether its used loosely. There is lot of research done or going on classifying the text as well as augmenting such text.
 
-The ability to build accurate models to correctly classify hateful content is a challenging task due to the limited availability of labeled data required for training. The training data needs to be labeled by human annotators. In addition to being a tedious task, it also exposes the annotators to the disturbing content that they are required to be exposed to, in order label. The public data sets available today are highly imbalanced and have very limited samples for some of the minority categories including \emph{threat}, \emph{obscene} and \emph{severe\_toxic} compared to the large amount of non-toxic samples. We follow two approaches to deal with the limitations of data availability.
+The ability to build accurate models to correctly classify hateful content is a challenging task due to the limited availability of labeled data required for training. The training data needs to be labeled by human annotators. In addition to being a tedious task, it also necessitates exposing the annotators to  disturbing content in order label it. The public data sets available today are highly imbalanced and have very limited samples for some of the minority categories including \emph{threat}, \emph{obscene} and \emph{severe\_toxic} compared to the large amount of non-toxic samples. We follow two approaches to deal with the limitations of data availability.
 
 1) Pre-trained large language models have made it feasible to achieve better accuracy  in many NLP tasks where the amount of training data is limited, by providing word embeddings that have already learned characteristics of natural language. Using these pre-learned embeddings as the input to a classification model enables the model to learn to classify the content using much less training data than it would have needed to learn the same relationship from scratch.
 
@@ -73,13 +73,21 @@ We use three large language models: BERT, T5 and XLNet and fine-tune them for a 
 
 2) Our source data set is highly imbalanced and has very limited data for three out of the six categories. We use a combination of approaches to balance our data set to help the model balance learning across all categories.
 
-We have three minority categories: \emph{threat}, \emph{severe-toxic} and \emph{identity\_hate} that have very low representation in our training data set. We use the TOXIGEN \cite{hartvigsen2022toxigen} data set to augment data for the \emph{identity\_hate} class. To augment data for the other classes, we use back translation to generate additional samples from the existing data. 
+We have three minority categories: \emph{threat}, \emph{severe-toxic} and \emph{identity\_hate} that have very low representation in our training data set. We use the TOXIGEN \cite{hartvigsen2022toxigen} data set to augment data for the \emph{identity\_hate} class. To augment data for the other minority classes, we use back translation to generate additional samples from the existing data. 
 
 
 \section{Background}
+
+Cyber-bullying was first documented at the turn of the century when internet use was not longer restricted to academic institutions, large corporations and government, but became common place as home PCs could connect to the internet.  A 2002 publication to address bullying in schools included "sending malicious e-mails or text messages on mobile phones" as a form of bullying  \cite{petersmithBullying}.
+
+Within only 6 years, 22\% of high school students reported having been cyber-bullied at least once \cite{Cyberbullying2008}.  The figure quickly doubled while researchers at MIT built the first models to detect cyber-bullying \cite{cyberbullyingMIT} utilizing TF-IDF, bigrams and lists of profane words.
+
+It would be a about a decade before the focus on Attention \cite{Attention} and pre-trained large language models like BERT \cite{Bert} made it possible to create the sophisticated models to do accurate classification that we have today. 
+
 There has been a lot of research and previous work done with focus on toxic content classification and different ways have been explored to improve the accuracy of classification. 
-The unavailability of enough quality labeled data has been widely accepted as a limitation in the ability to create accurate models for toxic content classification. \cite{rastogi2020can} has explored generating synthetic data using EDA and back translation to augment the training data and reported improved recall and F1 scores. \cite{hartvigsen2022toxigen} have explored the complexity of identifying implicit identity\_hate targeted at minority groups and used GPT-2 to generate additional data to augment the current available human labeled data sets. 
-Another issue has been the inconsistency in labeling methodologies across the publicly available data sets limiting the generalization of trained models \cite{fortuna2020toxic}. 
+
+The unavailability of enough quality labeled data has been widely accepted as a limitation in the ability to create accurate models for toxic content classification. \cite{rastogi2020can} has explored generating synthetic data using Easy Data Augmentation and back translation to augment the training data and reported improved recall and F1 scores. \cite{hartvigsen2022toxigen} have explored the complexity of identifying implicit \emph{identity\_hate} targeted at minority groups and used GPT-2 to generate additional data to augment the current available human labeled data sets. 
+Another issue has been the inconsistency in labeling methodologies across the publicly available data sets limiting the generalization of trained models that was studied by \cite{fortuna2020toxic}. 
 
 \section{Data}
 
@@ -98,7 +106,7 @@ We used the dataset from the Jigsaw Toxic Comment Classification Challenge held 
 
 
 \subsection{Data Balancing}
-Our source data is highly imbalanced. Out of the 6 labeled classes, 3 are majority classes with and 3 are minority classes.
+Our source data is highly imbalanced. Out of the 6 labeled classes, 3 are majority classes and 3 are minority classes.
 
 
 \begin{figure}[h!]
@@ -110,7 +118,7 @@ Our source data is highly imbalanced. Out of the 6 labeled classes, 3 are majori
 
 
 \subsection{Augmenting Minority Class Data}
-We augmented the training data for minority classes to bring it closer in count to the majority classes.
+We increased the training data for minority classes to bring it closer in count to the majority classes.
 
 For \emph{severe\_toxic} and \emph{threat}, we used back-translation with Google Translate API to supplement the training data.  For the smallest class, \emph{threat}, we back-translated all 476 comments using 3 languages - Chinese, Hindi and French - which along with the original comment quadrupled the number of comments in our training data.  For \emph{severe\_toxic}, we back translated 500 comments using Chinese, to supplement our training data.
 
@@ -131,9 +139,9 @@ To further balance the data set for the 6 identified classes, we selected all co
 \section{Methods}
 
 \subsection{Baseline Model - BERT fine-tuned on source data}
-Our baseline model is BERT base model (cased). We fine-tune the model on the full training data set that has been split into training and validation using 80:20 split and stratified on the 6 label classes. We add a hidden layer with 200 neurons and dropout layer with 0.3 before our final classification layer with 6 outputs to perform a multi label classification. We train the model for 2 epochs using learning rate of .00005 and batch size of 32.
+Our baseline model is BERT base model (cased). We fine-tuned the model on the full training data set that was split 80:20 into training and validation and stratified on the 6 label classes. We add a hidden layer with 200 neurons and dropout layer with 0.3 before our final classification layer with 6 outputs to perform a multi-label classification. We trained the model for 2 epochs using learning rate of .00005 and batch size of 32.
 
-The model performs really poorly for our 3 minority classes, completely failing to identify any of the \emph{severe\_toxic}, \emph{threat} and \emph{identity\_hate comments}.
+The model performs really poorly for our 3 minority classes, completely failing to identify any of the \emph{severe\_toxic}, \emph{threat} or \emph{identity\_hate} comments.
 
 \begin{table}
 \centering
@@ -158,9 +166,9 @@ The model performs really poorly for our 3 minority classes, completely failing 
 \end{table}
 
 \subsection{BERT fine-tuned with balanced data}
-Our baseline model's poor performance is due to the much smaller amount of training data for the minority classes. To model is favoring the majority classes and is learning to just return the label as one of the majority classes to maximize accuracy since that is what most of the data is. To help our model learn the features of the minority classes, we create a new balanced data set by undersampling our majority classes and augmenting the minority classes. We run the BERT model with the same hyperparameters as in our baseline with the balanced data set.
+Our baseline model's poor performance is due to the much smaller amount of training data for the minority classes. To model is favoring the majority classes and is learning to just return the label as one of the majority classes to maximize accuracy since that is what overwhelming majority of the data is. To help our model learn the features of the minority classes, we create a new balanced data set by undersampling our majority classes and augmenting the minority classes. We run the BERT model with the same hyperparameters as in our baseline with the balanced data set.
 Balancing the data set did not improve the classification score for minority classes at all it still stayed flat at 0 with none of the 3 minority classes being identified. Our data set size was reduced drastically after undersampling but we still had ~13,000 records which is an acceptable amount of data for fine-tuning BERT.
-Since BERT was originally trained on wikipedia data and has not previously seen a majority of the vocabulary that is in the toxic data, it is not able to learn enough from the provided data to identify the minority classes. 
+Since BERT was originally trained on Wikipedia data and has not previously seen enough vocabulary that contains toxic comments, it is not able to learn enough from the provided data to identify the minority classes. 
 
 
 \subsection{Retraining BERT layers}
@@ -169,9 +177,9 @@ The first classifier with retraining only the top 2 BERT layers gave as a huge i
 
 
 \subsection{T5}
-We used T5-small \cite{raffel2020exploring} on the unbalanced training dataset similar to BERT. The model was adopted from \cite{t5mlcode}. As part of the multilabel classification a language modeling head is used on top of the decoder. The model was run 2 epochs with 8 and 16 batch size. The lesser epochs was because of the time the model was taking to train and predict. The model was very biased towards the higher dataset and also failed to predict the lower classes (insult, identity\_hate) which can be seen from the lower ROC-AUC scores.
+We used T5-small \cite{raffel2020exploring} on the unbalanced training dataset similar to BERT. The model was adopted from \cite{t5mlcode}. As part of the multilabel classification a language modeling head is used on top of the decoder. The model was run 2 epochs with 8 and 16 batch size. The low number of epochs was because of the time the model was taking to train. The model was very biased towards the majority classes and also failed to predict the two of the minority classes (\emph{insult} and \emph{identity\_hate}) which can be seen from the lower ROC-AUC scores.
 
-The same experiment was repeated with balanced dataset for 2 epochs and 16 batch size. The results were similar to what was seen with unbalanced dataset. It was still not predicting the classes insult and identity\_hate properly.
+The same experiment was repeated with balanced dataset for 2 epochs and 16 batch size. The results were similar to what was seen with unbalanced dataset. It was still not predicting the \emph{insult} and \emph{identity\_hate} classes properly.
 
 With above results, it was not prudent for us to pursue with T5 due to no improvement in the metrics.
 
@@ -231,13 +239,13 @@ We found that XLNet gave us a modest improvement over Bert, both with balanced a
 
 Metrics were captured across multiple models that were tested as shown in Table ~\ref{table:UnBalResults} and Table ~\ref{table:BalResults}. Each model was run for multiple epochs to ensure proper outcome of metrics. We captured macro AUC-ROC scores, macro F1 score and AUC-ROC scores for different labels across different runs.
 
-The baseline BERT model (with no re training) performed very poorly on the minority classes for both Unbalanced and Augmented Balanced dataset. We fine tuned the model by unfreezing multiple layers and training BERT to learn the toxic data. As can be seen in the tables, there was a significant improvement in the F1, AUC-ROC scores. We also saw the minority classes performing well in this situation.
+The baseline BERT model (with no re training) performed very poorly on the minority classes on both the unbalanced and balanced datasets. We fine-tuned the model by unfreezing multiple layers and trained BERT to learn the toxic data. As can be seen in the tables, there was a significant improvement in the F1, AUC-ROC scores. We also saw the minority classes performing well in this situation.
 
 T5 was applied on unbalanced data and balanced data. The observations showed that T5 does worse on all of our metrics compared to BERT and XLNet with the exception of classifying \emph{severe\_toxic} data where it outperforms all the other runs with huge margin.
 
 Similarly XLNet model was applied on both unbalanced as well as balanced dataset. We observed that XLNet outperformed all of our runs with other models for both the datasets. 
 
-Overall, the metrics across all the labels are more uniformly distribured when the models are trained on the balanced dataset. Referring to Figures ~\ref{UnbalancedData} and ~\ref{BalancedData} there is a clear indication of how each model shines given a balanced dataset.
+Overall, the metrics across all the labels are more uniformly distributed when the models are trained on the balanced dataset. Referring to Figures ~\ref{UnbalancedData} and ~\ref{BalancedData} there is a clear indication of how each model shines given a balanced dataset.
 
 \begin{figure}[]
 \centering
@@ -255,12 +263,12 @@ Overall, the metrics across all the labels are more uniformly distribured when t
 \FloatBarrier
 
 \section{Conclusion}
-In conclusion we found that the benefits of a pre-trained large language model are limited by the vocabulary that it was trained on. With Bert being trained only on wikipedia data it hasn't seen the same level of toxic content as in our training dataset which makes it harder to classify toxic comments correctly.
-T5 was pre-trained on a big corpus of data (C4) where it would have picked up some toxic labels. The metrics for \emph{severe\_toxic} in Table ~\ref{table:BalResults} as well as ~\ref{table:UnBalResults} clearly shows that it is biased towards that label due to some pre-learning whereas few other classes were left out.
-With XLNet outshining the other two models in the metrics, we can clearly say that XLNet can be used for multi label classification on toxic data
+In conclusion we found that the benefits of a pre-trained large language model are limited by the vocabulary that it was trained on. With Bert being trained only on Wikipedia data it hasn't seen the same level of toxic content as in our training dataset which makes it harder to classify toxic comments correctly.
+T5 was pre-trained on a large corpus of data (C4) where it would have picked up more toxic content. The metrics for \emph{severe\_toxic} in Table ~\ref{table:BalResults} as well as ~\ref{table:UnBalResults} clearly shows that it is biased towards that label due to some pre-learning whereas few other classes were left out.
+With XLNet outperforming the other two models in the metrics, we can clearly say that XLNet is the best at multi-label classification on toxic data.
 
 \section{Future work}
-Our experiments with different models were based on the toxic dataset and some augmentation that was done to balance it. One area we did not focus on is unbiased training or providing unbiased dataset. So, there may be some biases that are exhibited with the training we did for the dataset we obtained. This is one area we can look at in the future.
+Our experiments with different models were based on the Jigsaw toxic dataset and some augmentation was done to balance it. One area we did not focus on is unbiased training or providing unbiased dataset. So, there may be some biases that are exhibited with the training we did for the dataset we obtained. This is one area we can look at in the future.
 
 For future work we would like to evaluate and optimize our model for fairness across sensitive groups inspired by \cite{baldini2021your}.
 
