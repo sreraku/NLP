@@ -1,5 +1,5 @@
 %
-% File acl2020.tex
+% File finalproject.tex
 %
 %% Based on the style files for ACL 2020, which were
 %% Based on the style files for ACL 2018, NAACL 2018/19, which were
@@ -73,21 +73,21 @@ We use three large language models: BERT, T5 and XLNet and fine-tune them for a 
 
 2) Our source data set is highly imbalanced and has very limited data for three out of the six categories. We use a combination of approaches to balance our data set to help the model balance learning across all categories.
 
-We have three minority categories: \emph{threat}, \emph{severe-toxic} and \emph{identity\_hate} that have very low representation in our training data set. We use the TOXIGEN \cite{hartvigsen2022toxigen} data set to augment data for the \emph{identity\_hate} class. To augment data for the other minority classes, we use back translation to generate additional samples from the existing data. 
+We have three minority categories: \emph{threat}, \emph{severe-toxic} and \emph{identity\_hate} that have very low representation in our training data set. We use the TOXIGEN \cite{hartvigsen2022toxigen} dataset to augment data for the \emph{identity\_hate} class. To augment data for the other minority classes, we use back translation to generate additional samples from the existing data. 
 
 
 \section{Background}
 
-Cyber-bullying was first documented at the turn of the century when internet use was not longer restricted to academic institutions, large corporations and government, but became common place as home PCs could connect to the internet.  A 2002 publication to address bullying in schools included "sending malicious e-mails or text messages on mobile phones" as a form of bullying  \cite{petersmithBullying}.
+Cyber-bullying was first documented at the turn of the century when internet use was no longer restricted to academic institutions, large corporations and government, but became common place as home PCs could connect to the internet.  A 2002 publication to address bullying in schools included "sending malicious e-mails or text messages on mobile phones" as a form of bullying  \cite{haworth2002bullying}.
 
-Within only 6 years, 22\% of high school students reported having been cyber-bullied at least once \cite{Cyberbullying2008}.  The figure quickly doubled while researchers at MIT built the first models to detect cyber-bullying \cite{cyberbullyingMIT} utilizing TF-IDF, bigrams and lists of profane words.
+Within only 6 years, 22\% of high school students reported having been cyber-bullied at least once \cite{smith2008cyberbullying}.  The figure quickly doubled while researchers at MIT built the first models to detect cyber-bullying \cite{dinakar2011modeling} utilizing TF-IDF, bigrams and lists of profane words.
 
-It would be a about a decade before the focus on Attention \cite{Attention} and pre-trained large language models like BERT \cite{Bert} made it possible to create the sophisticated models to do accurate classification that we have today. 
+It would be about a decade before the focus on Attention \cite{NIPS2017_3f5ee243} and pre-trained large language models like BERT \cite{devlin2018bert} made it possible to create the sophisticated models to do accurate classification that we have today. 
 
 There has been a lot of research and previous work done with focus on toxic content classification and different ways have been explored to improve the accuracy of classification. 
 
-The unavailability of enough quality labeled data has been widely accepted as a limitation in the ability to create accurate models for toxic content classification. \cite{rastogi2020can} has explored generating synthetic data using Easy Data Augmentation and back translation to augment the training data and reported improved recall and F1 scores. \cite{hartvigsen2022toxigen} have explored the complexity of identifying implicit \emph{identity\_hate} targeted at minority groups and used GPT-2 to generate additional data to augment the current available human labeled data sets. 
-Another issue has been the inconsistency in labeling methodologies across the publicly available data sets limiting the generalization of trained models that was studied by \cite{fortuna2020toxic}. 
+The unavailability of enough quality labeled data has been widely accepted as a limitation in the ability to create accurate models for toxic content classification. \citet*{rastogi2020can} has explored generating synthetic data using Easy Data Augmentation and back translation to augment the training data and reported improved recall and F1 scores. \citet*{hartvigsen2022toxigen} have explored the complexity of identifying implicit \emph{identity\_hate} targeted at minority groups and used GPT-2 to generate additional data to augment the current available human labeled data sets. 
+Another issue has been the inconsistency in labeling methodologies across the publicly available data sets limiting the generalization of trained models that was studied by \citet*{fortuna2020toxic}. 
 
 \section{Data}
 
@@ -173,11 +173,11 @@ Since BERT was originally trained on Wikipedia data and has not previously seen 
 
 \subsection{Retraining BERT layers}
 Our next step was to systematically unfreeze the pre-trained BERT layers 2 at a time and retrain them using our data set. We used the original unbalanced data set and the balanced dataset we created and re-trained the top 2 BERT layers, followed by 4, 6 and all the layers.
-The first classifier with retraining only the top 2 BERT layers gave as a huge improvement in score for all three of the minority classes. As we retrained deeper layers, the total score kept moving upwards. For the full unbalanced dataset, the improvement stagnates after 4 layers. This has been observed in previous work done by \cite{Singh2020HowMD}. But we observed that with the smaller balanced dataset, the improvement continues as we retrain more layers with full retraining of all 12 layers giving us the best scores.
+The first classifier with retraining only the top 2 BERT layers gave as a huge improvement in score for all three of the minority classes. As we retrained deeper layers, the total score kept moving upwards. For the full unbalanced dataset, the improvement stagnates after 4 layers. This has been observed in previous work done by \citet*{Singh2020HowMD}. But we observed that with the smaller balanced dataset, the improvement continues as we retrain more layers with full retraining of all 12 layers giving us the best scores.
 
 
 \subsection{T5}
-We used T5-small \cite{raffel2020exploring} on the unbalanced training dataset similar to BERT. The model was adopted from \cite{t5mlcode}. As part of the multilabel classification a language modeling head is used on top of the decoder. The model was run 2 epochs with 8 and 16 batch size. The low number of epochs was because of the time the model was taking to train. The model was very biased towards the majority classes and also failed to predict the two of the minority classes (\emph{insult} and \emph{identity\_hate}) which can be seen from the lower ROC-AUC scores.
+We used T5-small \cite{raffel2020exploring} on the unbalanced training dataset similar to BERT. The model was adopted from \citet*{t5mlcode}. As part of the multi-label classification a language modeling head is used on top of the decoder. The model was run 2 epochs with 8 and 16 batch size. The low number of epochs was because of the time the model was taking to train. The model was very biased towards the majority classes and also failed to predict the two of the minority classes (\emph{insult} and \emph{identity\_hate}) which can be seen from the lower ROC-AUC scores.
 
 The same experiment was repeated with balanced dataset for 2 epochs and 16 batch size. The results were similar to what was seen with unbalanced dataset. It was still not predicting the \emph{insult} and \emph{identity\_hate} classes properly.
 
@@ -185,7 +185,7 @@ With above results, it was not prudent for us to pursue with T5 due to no improv
 
 \subsection{XLNet}
 
-Once T5 didn't give an improvement over Bert, we examined models that use a different approach to pre-training and implemented XLNet (\cite{yang2019xlnet}, which is an auto-regressive based model that does a better job of learning dependency pairs.
+Once T5 didn't give an improvement over Bert, we examined models that use a different approach to pre-training and implemented XLNet \cite{yang2019xlnet}, which is an auto-regressive based model that does a better job of learning dependency pairs.
 
 We ran XLNet on both the unbalanced and balanced data, for 6 epochs on each.
 
@@ -272,7 +272,11 @@ Our experiments with different models were based on the Jigsaw toxic dataset and
 
 For future work we would like to evaluate and optimize our model for fairness across sensitive groups inspired by \cite{baldini2021your}.
 
-We have seen that each of the model has its own area of strength. So, we would like to create and  ensemble model derived from the strengths shown by BERT, T5 and XLNet. 
+We have seen that each of the model has its own area of strength. So, we would like to create and  ensemble model derived from the strengths shown by BERT, T5 and XLNet.
+
+
+\newpage
+
 
 \bibliographystyle{apalike}
 \bibliography{finalproject}
